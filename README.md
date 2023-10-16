@@ -12,8 +12,24 @@ Nous utiliserons pour ce projet des modules Python de calculs et de représentat
 
 ## Répartition du travail
 
+```mermaid
+gantt
+    title Projet Pollution en Occitanie
+    dateFormat DD-MM
+    axisFormat %d/%m
+    section Deadlines
+        Évaluation Intermédiaire : milestone, 23-10, 0d
+        Finalisation Github : milestone, 10-12, 0d
+        Oral : milestone, 15-12, 0d
+    section Section
+        A task          :a1, 10-10, 30d
+        Another task    :after a1, 20d
+    section Another
+        Task in Another :01-11, 12d
+        another task    :24d
+```
 
-'Packages'
+
 'lien_vers_le_site_web'
 'extraits_de_code'
 Auteurs: DIALLO, LAPI, MANNEQUIN, MOTTIER
