@@ -22,7 +22,7 @@ Pour un projet sur la pollution de l'air en Occitanie, voici quelques-uns des pa
 
 6.	Streamlit : pour créer une application web interactive pour visualiser et analyser les données de la pollution de l'air.
 
-Ces packages couvrent les aspects essentiels de la collecte, de l'analyse et de la visualisation des données de qualité de l'air. Vous pourrez ainsi effectuer une analyse approfondie et présenter vos résultats de manière efficace. Cependant, les besoins spécifiques de votre projet peuvent varier, alors assurez-vous de les adapter en fonction de vos objectifs particuliers.
+Ces packages couvrent les aspects essentiels de la collecte, de l'analyse et de la visualisation des données de qualité de l'air. Nous pourrions ainsi effectuer une analyse approfondie et présenter nos résultats de manière efficace.
 
 ## Choix des données
 Pour mener à bien ce projet, nous aurons besoin de données que nous allons télécharger (au format .csv) directement sur le site ATMO Occitanie pour ce qui concerne la pollution. Ici, seules les données concernant la cencentration de certains polluants athmosphériques (NO2, PM, O3, NOx, NO, SO2) dans les zones urbaines de la région Occitanie nous serons utiles.
