@@ -21,15 +21,25 @@ gantt
         Évaluation Intermédiaire : milestone, 23-10, 0d
         Finalisation Github : milestone, 10-12, 0d
         Oral : milestone, 15-12, 0d
-    section Section
-        A task          :a1, 10-10, 30d
-        Another task    :after a1, 20d
-    section Another
-        Task in Another :01-11, 12d
-        another task    :24d
+    section Pré-projet
+        Readme :06-10, 15d
+    section Développement
+        Gestion de données : 20-10, 30d
+        Quarto          :a1,20-10, 45d
+        Graphiques      :g1, 20-10, 40d
+        Carte           :20-10, 40d
+        Paramètrisation :12-11, 20d
+        Docu   :26-11, 13d
+    section Oral
+        Prépa oral : 05-12, 7d
 ```
 
+Quatre branches principales de développement ont été identifiées : 
 
-'lien_vers_le_site_web'
-'extraits_de_code'
++ Extraction et tri des données - gestion du téléchargement des données par l'utilisateur - package pooch (LAPI)
++ Construction des graphiques en fonction des lieux, des polluants (DIALLO)
++ Construction de la carte et intégration de données de pollution (MANNEQUIN)
++ Écriture du fichier quarto, insertion des différents éléments Python, mise en place de l'intéractivité (MOTTIER)
+
+
 Auteurs: DIALLO, LAPI, MANNEQUIN, MOTTIER
