@@ -5,10 +5,13 @@
 Le but de ce projet en groupe est de créer un site internet présentant une étude de la pollution de l'air en Occitanie à partir de données de ATMO Occitanie et SYNOP data.
 
 ## Descriptif
-Dans un premier temps, la page internet comportera une carte de la region, à partir de laquelle on pourra observer la pollution de l'air dans différentes villes. Selectionner une ville nous permettra d'avoir accès à des représentations graphiques parametrables en fonction des polluants et des échelles de temps.
 
+La page internet comportera deux onglets :
++ Une carte de la région Occitanie, présentant des marqueurs de pollution (nature à préciser) pour les principales agglomérations
++ Des représentations graphiques paramétrables (en fonction des polluants et des échelles de temps) présentant la pollution dans différentes villes (sélectionnées par l'utilisateur par l'intermédiraire d'une barre de recherche).
+  
 ## Choix des données
-Pour mener à bien ce projet, nous aurons besoin de données que nous allons télécharger (au format .csv) directement sur le site ATMO Occitanie pour ce qui concerne la pollution. Ici, seules les données concernant la cencentration de certains polluants athmosphériques (NO2, PM, O3, NOx, NO, SO2) dans les zones urbaines de la région Occitanie nous serons utiles.
+Pour mener à bien ce projet, nous aurons besoin de données que nous allons télécharger (au format .csv) directement sur le site ATMO Occitanie pour ce qui concerne la pollution. Ici, seules les données concernant la concentration de certains polluants athmosphériques (NO2, PM, O3, NOx, NO, SO2) dans les zones urbaines de la région Occitanie nous serons utiles.
 Toutefois, étant donnée que la metéo peut elle aussi avoir une influence sur la qualité de l'air, nous utiliserons également les données de SYNOP pour compléter nos analyses.
 
 
@@ -46,21 +49,21 @@ gantt
         Readme :06-10, 15d
     section Développement
         Gestion de données : 20-10, 30d
-        Quarto          :a1,20-10, 45d
-        Graphiques      :g1, 20-10, 40d
-        Carte           :20-10, 40d
+        Architecture          :a1,20-10, 45d
+        Graphiques      :g1, 25-10, 40d
+        Carte           :25-10, 40d
         Paramètrisation :12-11, 20d
-        Docu   :26-11, 13d
+        Documentation   :26-11, 13d
     section Oral
         Prépa oral : 05-12, 7d
 ```
 Quatre branches principales de développement ont été identifiées :
 
 
-+ Extraction et tri des données - gestion du téléchargement des données par l'utilisateur - package pooch (LAPI)
++ Extraction et tri des données - gestion du téléchargement des données récentes par l'utilisateur - package pooch (LAPI)
 + Construction des graphiques en fonction des lieux, des polluants (DIALLO)
 + Construction de la carte et intégration de données de pollution (MANNEQUIN)
-+ Écriture du fichier quarto, insertion des différents éléments Python, mise en place de l'intéractivité (MOTTIER)
++ Écriture du fichier quarto, architecture du site, insertion des différents éléments Python, mise en place de l'intéractivité (MOTTIER)
 
 
 
