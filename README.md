@@ -10,7 +10,7 @@ La page internet comportera deux onglets :
 + Une carte de la région Occitanie, présentant des marqueurs de pollution (nature à préciser) pour les principales agglomérations
 + Des représentations graphiques paramétrables (en fonction des polluants et des échelles de temps) présentant la pollution dans différentes villes (sélectionnées par l'utilisateur par l'intermédiraire d'une barre de recherche).
 Voici un shéma de ce à quoi devra ressembler notre site :
-![Image schéma](https://ibb.co/bXH2rSh.jpeg)
+![Texte alternatif](https://ibb.co/bXH2rSh)
   
 ## Choix des données
 Pour mener à bien ce projet, nous aurons besoin de données que nous allons télécharger (au format .csv) directement sur le site ATMO Occitanie pour ce qui concerne la pollution. Ici, seules les données concernant la concentration de certains polluants athmosphériques (NO2, PM, O3, NOx, NO, SO2) dans les zones urbaines de la région Occitanie nous serons utiles.
