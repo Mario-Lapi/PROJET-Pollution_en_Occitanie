@@ -2,6 +2,7 @@ project:
   type: website
   render:
     - index.qmd
+    - Premiers tests/Test_graph.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -32,7 +33,7 @@ website:
   #   - href: Courses/TimeMemory/tp.qmd
   # menu: false
   navbar:
-    title: "Titre -> à modifier"
+    title: "Pollution en Occitanie"
     background: primary
     # search: true
     # tools:
@@ -46,16 +47,18 @@ website:
       # - text: "Overview"
       #   href: index.qmd
       - sidebar:Carte
-      - sidebar:Graphiques
+      - text: "Graphiques"
+        file: Premiers tests/Test_graph.qmd
   # sidebar:
-  #   - id: Carte
-  #     title: "Carte"
-  #     collapse-level: 1
-  #     contents:
+  # #   - id: Carte
+  # #     title: "Carte"
+  # #     collapse-level: 1
+  # #     contents:
   #   - id : Graphiques
   #     title: "Graphiques"
-  #     collapse-level: 1
+  #     collapse-level: 3
   #     contents:
+  #       - Premiers tests/Test_graph.qmd
 
     # - id: general
     #   title: "General tools"
@@ -111,7 +114,7 @@ format:
     html-math-method: katex
     number-sections: false
     toc-depth: 3
-    code-fold: false
+    code-fold: true
     code-tools:
       toggle: false
       source: false
