@@ -1,0 +1,10 @@
+---
+title: "Pollution en Occitanie"
+---
+
+## Auteurs
+
+- Khadidiatou Kenewy DIALLO : [khadidiatou-kenewy.diallo@etu.umontpellier.fr](mailto:khadidiatou-kenewy.diallo@etu.umontpellier.fr),
+- Mario LAPI : [mario.lapi@etu.umontpellier.fr](mailto:mario.lapi@etu.umontpellier.fr),
+- Jeanne MANNEQUIN : [jeanne.mannequin@etu.umontpellier.fr](mailto:jeanne.mannequin@etu.umontpellier.fr),
+- Camille MOTTIER : [camille.mottier@etu.umontpellier.fr](mailto:camille.mottier@etu.umontpellier.fr).

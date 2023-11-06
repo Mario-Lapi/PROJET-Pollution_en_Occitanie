@@ -1,0 +1,126 @@
+project:
+  type: website
+  render:
+    - index.qmd
+website:
+  back-to-top-navigation: true
+  page-navigation: true # true not working in website
+  title: "Pollution en Occitanie"
+  # site-url: 
+  repo-url: https://github.com/Mario-Lapi/PROJET-Pollution_en_Occitanie
+  # repo-actions: 
+  # sidebar:
+  # left:
+  #   contents:
+  #     - section: "Overview"
+  #       contents:
+  #         - href: index.qmd
+  #     - section: "Courses"
+  # contents:
+  #   - href: Courses/Bash/tp.qmd
+  #   - href: Courses/Git/tp.qmd
+  #   - href: Courses/IDE/tp.qmd
+  #   - href: Courses/Venv/tp.qmd
+  #   - href: Courses/CI/tp.qmd
+  #   - href: Courses/Docs/tp.qmd
+  #   - href: Courses/Python-modules/tp.qmd
+  #   - href: Courses/ClassesExceptions/tp.qmd
+  #   - href: Courses/Test/tp.qmd
+  #   - href: Courses/Pandas/tp.qmd
+  #   - href: Courses/Numpy/tp.qmd
+  #   - href: Courses/ScipyNumpy/tp.qmd
+  #   - href: Courses/TimeMemory/tp.qmd
+  # menu: false
+  navbar:
+    title: "Titre -> à modifier"
+    background: primary
+    # search: true
+    # tools:
+    #   - icon: bicycle
+    #     href: https://moodle.umontpellier.fr/course/view.php?id=22454
+    #     text: Moodle
+    #   - icon: github
+    #     href: https://github.com/josephsalmon/HAX712X
+    #     text: GitHub
+    left:
+      # - text: "Overview"
+      #   href: index.qmd
+      - sidebar:Carte
+      - sidebar:Graphiques
+  # sidebar:
+  #   - id: Carte
+  #     title: "Carte"
+  #     collapse-level: 1
+  #     contents:
+  #   - id : Graphiques
+  #     title: "Graphiques"
+  #     collapse-level: 1
+  #     contents:
+
+    # - id: general
+    #   title: "General tools"
+    #   collapse-level: 3
+    #   contents:
+    #     - Courses/Bash/tp.qmd
+    #     - Courses/Git/tp.qmd
+    #     - Courses/IDE/tp.qmd
+    #     - Courses/CI/tp.qmd
+    #     - Courses/Docs/tp.qmd
+    # - id: python
+    #   title: "Python"
+    #   collapse-level: 3
+    #   contents:
+    #     - section: "Dev. Tools"
+    #       contents:
+    #         - Courses/Venv/tp.qmd
+    #         - Courses/ClassesExceptions/tp.qmd
+    #         - Courses/Python-modules/tp.qmd
+    #         - Courses/Test/tp.qmd
+    #     - section: "Scientific Python"
+    #       contents:
+    #         - Courses/Numpy/tp.qmd
+    #         - Courses/ScipyNumpy/tp.qmd
+    #         - Courses/TimeMemory/tp.qmd
+    #         - Courses/Visualization/tp.qmd
+    #     - section: "Pandas"
+    #       contents:
+    #         - Courses/Pandas/pandas_titanic.qmd
+    #         - Courses/Pandas/pandas_airparif.qmd
+    #         - Courses/Pandas/pandas_bikes.qmd
+    # - id: grading
+    #   title: "Grading"
+    #   collapse-level: 2
+    #   contents:
+    #     - section: "Project"
+    #       contents:
+    #         - Projects/README.qmd
+    #         - Projects/2023-2024/README.qmd
+    #         - Projects/2022-2023/README.qmd
+    #         - Projects/2021-2022/README.qmd
+    #     - section: "Bonus"
+    #       contents:
+    #         - Bonus/README.qmd
+
+format:
+  html:
+    toc: true
+    theme:
+      spacelab
+      # light: spacelab
+    # mainfont: Atkinson Hyperlegible
+    html-math-method: katex
+    number-sections: false
+    toc-depth: 3
+    code-fold: false
+    code-tools:
+      toggle: false
+      source: false
+    code-overflow: wrap
+    highlight-style: github
+    fig-responsive: true
+    fig.align: center
+    reference-location: margin
+    citation-location: margin
+    # self-contained: true
+    # fig-format: svg
+    # css: custom.scss
