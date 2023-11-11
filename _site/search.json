@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "Premiers tests/Test_graph.html",
+    "href": "Premiers tests/Test_graph.html",
+    "title": "Premier essai de graphe",
+    "section": "",
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\n\n#Extrait des données pour Mtp Près d'Arènes et NO2 - Données téléchargées\n\nMtp = pd.read_csv(\"Donnees_pour_test.csv\")\nMtp_PA_NO2 = Mtp.loc[(Mtp[\"nom_station\"]==\"Montpellier - Prés d Arènes Urbain\") & (Mtp[\"nom_poll\"]==\"NO2\"),[\"valeur\",\"date_debut\"]]\nDate = Mtp_PA_NO2[\"date_debut\"]\nReleve = Mtp_PA_NO2[\"valeur\"]\n\n\n# Création du DatFrame\n\ndata = {\n    'Date': Date,\n    'Valeur1': Releve\n}\ndf = pd.DataFrame(data)\ndf = df.sort_values(by=['Date'], ascending=[True])\ndf['Date'] = pd.to_datetime(df['Date'], format='%Y/%m/%d %H:%M:%S%z')\n\n# Création du graphique avec les dates en abscisse et les valeurs en ordonnée\n\nplt.figure(figsize=(20, 6))\nplt.plot(df['Date'], df['Valeur1'], label='Valeur1',ls='-')\n\n# Spécifiez les emplacements des ticks (ici, tous les jours)\nplt.gca().xaxis.set_major_locator(mdates.DayLocator())\n\n# Faites pivoter les labels des dates pour une meilleure lisibilité\nplt.xticks(rotation=45)\n\n# Ajouter des étiquettes aux axes et un titre\nplt.xlabel('Dates')\nplt.ylabel('Relevé (en $\\mu g/m^3$)')\nplt.title('Concentration en $NO_2$ - Montpellier Près d\\'Arènes')\n\n# Afficher le graphique\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Pollution en Occitanie",
@@ -12,12 +19,5 @@
     "title": "Pollution en Occitanie",
     "section": "",
     "text": "Khadidiatou Kenewy DIALLO : khadidiatou-kenewy.diallo@etu.umontpellier.fr,\nMario LAPI : mario.lapi@etu.umontpellier.fr,\nJeanne MANNEQUIN : jeanne.mannequin@etu.umontpellier.fr,\nCamille MOTTIER : camille.mottier@etu.umontpellier.fr."
-  },
-  {
-    "objectID": "Premiers tests/Test_graph.html",
-    "href": "Premiers tests/Test_graph.html",
-    "title": "Premier essai de graphe",
-    "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\n\n#Extrait des données pour Mtp Près d'Arènes et NO2 - Données téléchargées\n\nMtp = pd.read_csv(\"Donnees_pour_test.csv\")\nMtp_PA_NO2 = Mtp.loc[(Mtp[\"nom_station\"]==\"Montpellier - Prés d Arènes Urbain\") & (Mtp[\"nom_poll\"]==\"NO2\"),[\"valeur\",\"date_debut\"]]\nDate = Mtp_PA_NO2[\"date_debut\"]\nReleve = Mtp_PA_NO2[\"valeur\"]\n\n\n# Création du DatFrame\n\ndata = {\n    'Date': Date,\n    'Valeur1': Releve\n}\ndf = pd.DataFrame(data)\ndf = df.sort_values(by=['Date'], ascending=[True])\ndf['Date'] = pd.to_datetime(df['Date'], format='%Y/%m/%d %H:%M:%S%z')\n\n# Création du graphique avec les dates en abscisse et les valeurs en ordonnée\n\nplt.figure(figsize=(20, 6))\nplt.plot(df['Date'], df['Valeur1'], label='Valeur1',ls='-')\n\n# Spécifiez les emplacements des ticks (ici, tous les jours)\nplt.gca().xaxis.set_major_locator(mdates.DayLocator())\n\n# Faites pivoter les labels des dates pour une meilleure lisibilité\nplt.xticks(rotation=45)\n\n# Ajouter des étiquettes aux axes et un titre\nplt.xlabel('Dates')\nplt.ylabel('Relevé (en $\\mu g/m^3$)')\nplt.title('Concentration en $NO_2$ - Montpellier Près d\\'Arènes')\n\n# Afficher le graphique\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n Back to top"
   }
 ]
