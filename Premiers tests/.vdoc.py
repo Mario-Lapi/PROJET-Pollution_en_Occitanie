@@ -1,10 +1,12 @@
----
-title: "Premiers essais de graphes"
----
-
-## Un mois, un polluant, une station - via plt
-
-```{python}
+# type: ignore
+# flake8: noqa
+#
+#
+#
+#
+#
+#
+#
 import pandas as pd
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
@@ -47,11 +49,11 @@ plt.title('Concentration en $NO_2$ - Montpellier Près d\'Arènes')
 plt.tight_layout()
 plt.show()
 
-```
-
-## Un mois, une station, tous les polluants - via plotly 
-
-```{python}
+#
+#
+#
+#
+#
 import pandas as pd
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
@@ -105,4 +107,7 @@ def Trace_px(donnees,station) :
 # test
 Trace_px(Mtp,"Montpellier - Prés d Arènes Urbain")
 
-```
+#
+#
+#
+#
