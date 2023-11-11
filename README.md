@@ -2,6 +2,7 @@
 # Pollution en Occitanie
 
 
+
 Le but de ce projet en groupe est de créer un site internet présentant une étude de la pollution de l'air en Occitanie à partir de données de ATMO Occitanie et SYNOP data.
 
 ## Descriptif
