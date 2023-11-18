@@ -7,12 +7,13 @@ import pandas as pd
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import plotly.express as px
+import plotly.graph_objects as go
 from Month import *
 
 data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
 
 station = 'Rodez - Camonil Urbain'
 
-Trace_px(data,station)
+Trace_go(data,station,'Rodez')
 
 ```
