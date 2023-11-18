@@ -1,38 +1,38 @@
 [
   {
-    "objectID": "Par_villes/Albi.html",
-    "href": "Par_villes/Albi.html",
-    "title": "Pollution à Albi",
+    "objectID": "Par_villes/Montauban.html",
+    "href": "Par_villes/Montauban.html",
+    "title": "Pollution à Montauban",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Albi Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montauban - Ramierou Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "Par_villes/Tarbes.html",
-    "href": "Par_villes/Tarbes.html",
-    "title": "Pollution à Tarbes",
+    "objectID": "Par_villes/Perpignan.html",
+    "href": "Par_villes/Perpignan.html",
+    "title": "Pollution à Perpignan",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Tarbes-Dupuy Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Perpignan Centre - Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "Par_villes/Auch.html",
-    "href": "Par_villes/Auch.html",
-    "title": "Pollution à Auch",
+    "objectID": "Par_villes/Montpellier.html",
+    "href": "Par_villes/Montpellier.html",
+    "title": "Pollution à Montpellier",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'AUCH ST EXUPERY'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montpellier - Prés d Arènes Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "Par_villes/Nimes.html",
-    "href": "Par_villes/Nimes.html",
-    "title": "Pollution à Nîmes",
+    "objectID": "Par_villes/Toulouse.html",
+    "href": "Par_villes/Toulouse.html",
+    "title": "Pollution à Toulouse",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Nîmes Sud - Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Toulouse-Jacquier Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "Par_villes/Saint_Girons.html",
-    "href": "Par_villes/Saint_Girons.html",
-    "title": "Pollution à Saint-Girons",
+    "objectID": "Par_villes/Rodez.html",
+    "href": "Par_villes/Rodez.html",
+    "title": "Pollution à Rodez",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'St-Girons Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Rodez - Camonil Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html",
@@ -49,38 +49,38 @@
     "text": "Khadidiatou Kenewy DIALLO : khadidiatou-kenewy.diallo@etu.umontpellier.fr,\nMario LAPI : mario.lapi@etu.umontpellier.fr,\nJeanne MANNEQUIN : jeanne.mannequin@etu.umontpellier.fr,\nCamille MOTTIER : camille.mottier@etu.umontpellier.fr."
   },
   {
-    "objectID": "Par_villes/Rodez.html",
-    "href": "Par_villes/Rodez.html",
-    "title": "Pollution à Rodez",
+    "objectID": "Par_villes/Saint_Girons.html",
+    "href": "Par_villes/Saint_Girons.html",
+    "title": "Pollution à Saint-Girons",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Rodez - Camonil Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'St-Girons Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "Par_villes/Toulouse.html",
-    "href": "Par_villes/Toulouse.html",
-    "title": "Pollution à Toulouse",
+    "objectID": "Par_villes/Nimes.html",
+    "href": "Par_villes/Nimes.html",
+    "title": "Pollution à Nîmes",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Toulouse-Jacquier Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Nîmes Sud - Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "Par_villes/Montpellier.html",
-    "href": "Par_villes/Montpellier.html",
-    "title": "Pollution à Montpellier",
+    "objectID": "Par_villes/Auch.html",
+    "href": "Par_villes/Auch.html",
+    "title": "Pollution à Auch",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montpellier - Prés d Arènes Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'AUCH ST EXUPERY'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "Par_villes/Perpignan.html",
-    "href": "Par_villes/Perpignan.html",
-    "title": "Pollution à Perpignan",
+    "objectID": "Par_villes/Tarbes.html",
+    "href": "Par_villes/Tarbes.html",
+    "title": "Pollution à Tarbes",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Perpignan Centre - Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Tarbes-Dupuy Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "Par_villes/Montauban.html",
-    "href": "Par_villes/Montauban.html",
-    "title": "Pollution à Montauban",
+    "objectID": "Par_villes/Albi.html",
+    "href": "Par_villes/Albi.html",
+    "title": "Pollution à Albi",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montauban - Ramierou Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport pandas as pd\nimport matplotlib.dates as mdates\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nfrom Month import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Albi Urbain'\n\nTrace_px(data,station)\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   }
 ]
