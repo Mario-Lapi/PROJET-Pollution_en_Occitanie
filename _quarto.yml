@@ -2,7 +2,9 @@ project:
   type: website
   render:
     - index.qmd
-    - Premiers tests/Test_graph.qmd
+    - Premiers_tests/Test_graph.qmd
+    - Premiers_tests/Montpellier.qmd
+    - Premiers_tests/Toulouse.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -47,28 +49,16 @@ website:
       # - text: "Overview"
       #   href: index.qmd
       - sidebar:Carte
-      - text: "Graphiques"
-        file: Premiers tests/Test_graph.qmd
-  # sidebar:
-  # #   - id: Carte
-  # #     title: "Carte"
-  # #     collapse-level: 1
-  # #     contents:
-  #   - id : Graphiques
-  #     title: "Graphiques"
-  #     collapse-level: 3
-  #     contents:
-  #       - Premiers tests/Test_graph.qmd
-
-    # - id: general
-    #   title: "General tools"
-    #   collapse-level: 3
-    #   contents:
-    #     - Courses/Bash/tp.qmd
-    #     - Courses/Git/tp.qmd
-    #     - Courses/IDE/tp.qmd
-    #     - Courses/CI/tp.qmd
-    #     - Courses/Docs/tp.qmd
+      # - text: "Graphiques"
+      #   file: Premiers tests/Test_graph.qmd
+      - sidebar:Villes
+  sidebar:
+    - id: Villes
+      title: "Graphiques par villes"
+      collapse-level: 3
+      contents:
+        - Premiers_tests/Montpellier.qmd
+        - Premiers_tests/Toulouse.qmd
     # - id: python
     #   title: "Python"
     #   collapse-level: 3
