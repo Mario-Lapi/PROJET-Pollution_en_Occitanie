@@ -1,11 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Premiers tests/Test_graph.html</loc>
-    <lastmod>2023-11-11T18:03:31.699Z</lastmod>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Montauban.html</loc>
+    <lastmod>2023-11-18T14:11:57.381Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Perpignan.html</loc>
+    <lastmod>2023-11-18T14:11:47.573Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Montpellier.html</loc>
+    <lastmod>2023-11-18T14:11:37.537Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Toulouse.html</loc>
+    <lastmod>2023-11-18T14:11:27.697Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Rodez.html</loc>
+    <lastmod>2023-11-18T14:11:17.757Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/index.html</loc>
-    <lastmod>2023-11-11T18:03:28.927Z</lastmod>
+    <lastmod>2023-11-18T14:11:07.409Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Saint_Girons.html</loc>
+    <lastmod>2023-11-18T14:11:12.777Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Nimes.html</loc>
+    <lastmod>2023-11-18T14:11:22.713Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Auch.html</loc>
+    <lastmod>2023-11-18T14:11:32.525Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Tarbes.html</loc>
+    <lastmod>2023-11-18T14:11:42.437Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmottier/PROJET-Pollution_en_Occitanie/Par_villes/Albi.html</loc>
+    <lastmod>2023-11-18T14:11:52.485Z</lastmod>
   </url>
 </urlset>
