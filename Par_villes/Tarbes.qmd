@@ -1,0 +1,18 @@
+---
+title : "Pollution à Tarbes"
+---
+
+```{python}
+import pandas as pd
+import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
+import plotly.express as px
+from Month import *
+
+data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+
+station = 'Tarbes-Dupuy Urbain'
+
+Trace_px(data,station)
+
+```

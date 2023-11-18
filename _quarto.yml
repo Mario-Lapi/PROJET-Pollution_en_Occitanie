@@ -2,15 +2,22 @@ project:
   type: website
   render:
     - index.qmd
-    - Premiers_tests/Test_graph.qmd
-    - Premiers_tests/Montpellier.qmd
-    - Premiers_tests/Toulouse.qmd
+    - Par_villes/Saint_Girons.qmd
+    - Par_villes/Rodez.qmd
+    - Par_villes/Nimes.qmd
+    - Par_villes/Toulouse.qmd
+    - Par_villes/Auch.qmd
+    - Par_villes/Montpellier.qmd
+    - Par_villes/Tarbes.qmd
+    - Par_villes/Perpignan.qmd
+    - Par_villes/Albi.qmd
+    - Par_villes/Montauban.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
   title: "Pollution en Occitanie"
   # site-url: 
-  repo-url: https://github.com/Mario-Lapi/PROJET-Pollution_en_Occitanie
+  repo-url: https://github.com/cmottier/PROJET-Pollution_en_Occitanie
   # repo-actions: 
   # sidebar:
   # left:
@@ -57,8 +64,17 @@ website:
       title: "Graphiques par villes"
       collapse-level: 3
       contents:
-        - Premiers_tests/Montpellier.qmd
-        - Premiers_tests/Toulouse.qmd
+        - Par_villes/Saint_Girons.qmd
+        - Par_villes/Rodez.qmd
+        - Par_villes/Nimes.qmd
+        - Par_villes/Toulouse.qmd
+        - Par_villes/Auch.qmd
+        - Par_villes/Montpellier.qmd
+        - Par_villes/Tarbes.qmd
+        - Par_villes/Perpignan.qmd
+        - Par_villes/Albi.qmd
+        - Par_villes/Montauban.qmd
+
     # - id: python
     #   title: "Python"
     #   collapse-level: 3

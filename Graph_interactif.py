@@ -53,7 +53,7 @@ def Trace_px(donnees,station) :
 
 
 # test
-# Trace(Mtp,"Montpellier - Prés d Arènes Urbain", ["NO2","PM10"])
+# Trace_px(Mtp,"Montpellier - Prés d Arènes Urbain")
 
 
 
