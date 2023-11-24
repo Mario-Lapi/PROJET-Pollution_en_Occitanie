@@ -35,3 +35,8 @@ for point in points_interet:
 # Enregistrer la carte en tant que fichier HTML
 m.save('ma_carte.html')
 m
+
+#on va utiliser le pm10 seulement, points sur les chefs lieu, station "urbain"
+#Kenewy s'occupe du traitement de données
+#délimiter les départements aussi et rendre visible les chefs lieux qu'on va étudier
+#faire des points plus jolis (type "difusuion" ?)
