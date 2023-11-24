@@ -1,0 +1,19 @@
+---
+title : "Pollution à Toulouse"
+---
+
+```{python}
+import pandas as pd
+import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.graph_objects as go
+from Month import *
+
+data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+
+station = 'Toulouse-Jacquier Urbain'
+
+Trace_go(data,station,'Toulouse')
+
+```
