@@ -10,9 +10,9 @@ from plotly.subplots import make_subplots
 from Month import *
 
 #%%
-data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
-
-station = 'Montpellier - Prés d Arènes Urbain'
+# Pour test :
+# data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+# station = 'Montpellier - Prés d Arènes Urbain'
 
 # Créer le dataframe pour affichage horaire en semaine
 
@@ -51,7 +51,7 @@ def Horloge(df) :
         theta="heure",
         color="Polluants",
         # line_close=True,
-        range_r=[0, 60],
+        # range_r=[0, 60],
     )
     return fig
 
