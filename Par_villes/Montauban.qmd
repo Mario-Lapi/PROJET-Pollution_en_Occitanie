@@ -2,18 +2,25 @@
 title : "Pollution à Montauban"
 ---
 
+## Pollution sur un mois et variations horaires
+
 ```{python}
-import pandas as pd
-import matplotlib.dates as mdates
-import matplotlib.pyplot as plt
-import plotly.express as px
-import plotly.graph_objects as go
+# import pandas as pd
+# import matplotlib.dates as mdates
+# import matplotlib.pyplot as plt
+# import plotly.express as px
+# import plotly.graph_objects as go
 from Month import *
+from Horloge import *
 
 data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
 
 station = 'Montauban - Ramierou Urbain'
 
 Trace_go(data,station,'Montauban')
+
+Horloge_semaine(data, station)
+
+Horloge_weekend(data,station)
 
 ```

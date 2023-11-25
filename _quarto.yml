@@ -18,29 +18,7 @@ website:
   title: "Pollution en Occitanie"
   # site-url: 
   repo-url: https://github.com/cmottier/PROJET-Pollution_en_Occitanie
-  # repo-actions: 
-  # sidebar:
-  # left:
-  #   contents:
-  #     - section: "Overview"
-  #       contents:
-  #         - href: index.qmd
-  #     - section: "Courses"
-  # contents:
-  #   - href: Courses/Bash/tp.qmd
-  #   - href: Courses/Git/tp.qmd
-  #   - href: Courses/IDE/tp.qmd
-  #   - href: Courses/Venv/tp.qmd
-  #   - href: Courses/CI/tp.qmd
-  #   - href: Courses/Docs/tp.qmd
-  #   - href: Courses/Python-modules/tp.qmd
-  #   - href: Courses/ClassesExceptions/tp.qmd
-  #   - href: Courses/Test/tp.qmd
-  #   - href: Courses/Pandas/tp.qmd
-  #   - href: Courses/Numpy/tp.qmd
-  #   - href: Courses/ScipyNumpy/tp.qmd
-  #   - href: Courses/TimeMemory/tp.qmd
-  # menu: false
+
   navbar:
     title: "Pollution en Occitanie"
     background: primary
@@ -58,57 +36,35 @@ website:
       - sidebar:Carte
       # - text: "Graphiques"
       #   file: Premiers tests/Test_graph.qmd
-      - sidebar:Villes
-  sidebar:
-    - id: Villes
-      title: "Graphiques par villes"
-      collapse-level: 3
-      contents:
-        - Par_villes/Saint_Girons.qmd
-        - Par_villes/Rodez.qmd
-        - Par_villes/Nimes.qmd
-        - Par_villes/Toulouse.qmd
-        - Par_villes/Auch.qmd
-        - Par_villes/Montpellier.qmd
-        - Par_villes/Tarbes.qmd
-        - Par_villes/Perpignan.qmd
-        - Par_villes/Albi.qmd
-        - Par_villes/Montauban.qmd
+      - text: Graphiques par villes
+        menu: 
+          - Par_villes/Saint_Girons.qmd
+          - Par_villes/Rodez.qmd
+          - Par_villes/Nimes.qmd
+          - Par_villes/Toulouse.qmd
+          - Par_villes/Auch.qmd
+          - Par_villes/Montpellier.qmd
+          - Par_villes/Tarbes.qmd
+          - Par_villes/Perpignan.qmd
+          - Par_villes/Albi.qmd
+          - Par_villes/Montauban.qmd
+      # - sidebar:Villes
+  # sidebar:
+  #   - id: Villes
+  #     title: "Graphiques par villes"
+  #     collapse-level: 2
+  #     contents:
+  #       - Par_villes/Saint_Girons.qmd
+  #       - Par_villes/Rodez.qmd
+  #       - Par_villes/Nimes.qmd
+  #       - Par_villes/Toulouse.qmd
+  #       - Par_villes/Auch.qmd
+  #       - Par_villes/Montpellier.qmd
+  #       - Par_villes/Tarbes.qmd
+  #       - Par_villes/Perpignan.qmd
+  #       - Par_villes/Albi.qmd
+  #       - Par_villes/Montauban.qmd
 
-    # - id: python
-    #   title: "Python"
-    #   collapse-level: 3
-    #   contents:
-    #     - section: "Dev. Tools"
-    #       contents:
-    #         - Courses/Venv/tp.qmd
-    #         - Courses/ClassesExceptions/tp.qmd
-    #         - Courses/Python-modules/tp.qmd
-    #         - Courses/Test/tp.qmd
-    #     - section: "Scientific Python"
-    #       contents:
-    #         - Courses/Numpy/tp.qmd
-    #         - Courses/ScipyNumpy/tp.qmd
-    #         - Courses/TimeMemory/tp.qmd
-    #         - Courses/Visualization/tp.qmd
-    #     - section: "Pandas"
-    #       contents:
-    #         - Courses/Pandas/pandas_titanic.qmd
-    #         - Courses/Pandas/pandas_airparif.qmd
-    #         - Courses/Pandas/pandas_bikes.qmd
-    # - id: grading
-    #   title: "Grading"
-    #   collapse-level: 2
-    #   contents:
-    #     - section: "Project"
-    #       contents:
-    #         - Projects/README.qmd
-    #         - Projects/2023-2024/README.qmd
-    #         - Projects/2022-2023/README.qmd
-    #         - Projects/2021-2022/README.qmd
-    #     - section: "Bonus"
-    #       contents:
-    #         - Bonus/README.qmd
 
 format:
   html:
