@@ -12,6 +12,7 @@ project:
     - Par_villes/Perpignan.qmd
     - Par_villes/Albi.qmd
     - Par_villes/Montauban.qmd
+    - Geographique.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -31,11 +32,9 @@ website:
     #     href: https://github.com/josephsalmon/HAX712X
     #     text: GitHub
     left:
-      # - text: "Overview"
-      #   href: index.qmd
-      - sidebar:Carte
-      # - text: "Graphiques"
-      #   file: Premiers tests/Test_graph.qmd
+      - text: Comparaison géographique
+        menu: 
+          - Geographique.qmd
       - text: Graphiques par villes
         menu: 
           - Par_villes/Saint_Girons.qmd
