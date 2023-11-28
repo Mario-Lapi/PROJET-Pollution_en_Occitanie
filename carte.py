@@ -41,14 +41,16 @@ l=[]
 for point in points_interet:
     # Vérifier que le point a des coordonnées valides
     if isinstance(point['location'], list) and len(point['location']) == 2:
+        # Ajouter les coordonnées à la liste 'l'
+        l.append(point['location'])
         folium.Marker(
             location=point['location'],
-            popup=point['popup'],
-            icon=folium.Icon(color='red')
-        ).add_to(m)
-        l.append(point['location'])
-plugins.HeatMap(l, name=None, min_opacity=0.5, max_zoom=18, radius=25, blur=15, gradient=None, overlay=True, control=True, show=True).add_to(m)
+            icon=None,
+            popup=folium.Popup(point['popup']),
+            tooltip=folium.Tooltip(point['popup'])
+            ).add_to(m)
 
+plugins.HeatMap(l, name='HeatMap', min_opacity=0.5, max_zoom=18, radius=25, blur=15, gradient=None, overlay=True, control=True, show=True).add_to(m)
 
 # Enregistrer la carte en tant que fichier HTML
 m.save('ma_carte.html')
