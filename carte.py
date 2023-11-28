@@ -47,7 +47,7 @@ for point in points_interet:
             icon=folium.Icon(color='red')
         ).add_to(m)
         l.append(point['location'])
-plugins.HeatMap(l, name=None, min_opacity=0.5, max_zoom=18, radius=5000, blur=15, gradient=None, overlay=True, control=True, show=True).add_to(m)
+plugins.HeatMap(l, name=None, min_opacity=0.5, max_zoom=18, radius=25, blur=15, gradient=None, overlay=True, control=True, show=True).add_to(m)
 
 
 # Enregistrer la carte en tant que fichier HTML
