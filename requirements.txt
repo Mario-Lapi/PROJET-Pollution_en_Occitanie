@@ -2,6 +2,4 @@ numpy==1.24.3
 pandas==2.0.3
 matplotlib
 plotly
-git+https://github.com/cmottier/PROJET-Pollution_en_Occitanie/blob/main/Par_villes/Month
-git+https://github.com/cmottier/PROJET-Pollution_en_Occitanie/blob/main/Par_villes/Horloge
 folium 
