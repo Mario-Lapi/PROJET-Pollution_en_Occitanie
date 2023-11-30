@@ -36,15 +36,15 @@ def trace_resume(data, station) :
         x = "jour",
         y = "Concentration moyenne (µg/m³)",
         color="Polluants",
-        width = 700
+        width = 650
     )
-    return fig
+    fig.show()
 
 # Pour test :
-data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
-station = 'Montpellier - Prés d Arènes Urbain'
-resume(data,station)
-trace_resume(data, station)
+# data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+# station = 'Montpellier - Prés d Arènes Urbain'
+# resume(data,station)
+# trace_resume(data, station)
 
 
 
