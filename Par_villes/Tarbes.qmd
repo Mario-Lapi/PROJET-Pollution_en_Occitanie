@@ -12,12 +12,15 @@ title : "Pollution à Tarbes"
 # import plotly.graph_objects as go
 from Month import *
 from Horloge import *
+from Month_resume import *
 
 data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
 
 station = 'Tarbes-Dupuy Urbain'
 
 Trace_go(data,station,'Tarbes')
+
+trace_resume(data, station)
 
 Horloge_semaine(data, station)
 

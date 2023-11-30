@@ -8,7 +8,9 @@ import plotly.graph_objects as go
 
 #%%
 
-# Extraction renvoie un dataframe composé des dates et des valeurs relevées pour la station choisie, pour tous les polluants
+# Module comportant les fonctions d'étude des données horaires sur 30 jours
+
+# Extraction extrait des données les dates et les valeurs relevées pour la station choisie, pour tous les polluants
 
 def extraction(donnees,station) :
     df = donnees.loc[(donnees["nom_station"] == station),["nom_poll","valeur","date_debut"]]
@@ -16,7 +18,7 @@ def extraction(donnees,station) :
     df = df.rename(columns={'date_debut': 'Date'})
     return df
 
-# table renvoie un dataframe composé des colonnes : dates et tous les différents polluants en parallèle
+# table renvoie un dataframe avec en colonnes : les dates et tous les différents polluants en parallèle
 
 def table(donnees,station) :
     data = extraction(donnees,station)
@@ -72,4 +74,3 @@ def Trace_go(donnees,station,ville) :
     )
     fig.show()
 
-# %%

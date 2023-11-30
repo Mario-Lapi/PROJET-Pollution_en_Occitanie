@@ -12,12 +12,15 @@ title : "Pollution à Montauban"
 # import plotly.graph_objects as go
 from Month import *
 from Horloge import *
+from Month_resume import *
 
 data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
 
 station = 'Montauban - Ramierou Urbain'
 
 Trace_go(data,station,'Montauban')
+
+trace_resume(data, station)
 
 Horloge_semaine(data, station)
 
