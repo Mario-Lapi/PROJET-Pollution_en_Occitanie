@@ -36,7 +36,6 @@ def trace_resume(data, station) :
         x = "jour",
         y = "Concentration moyenne (µg/m³)",
         color="Polluants",
-        width = 650
     )
     fig.show()
 
