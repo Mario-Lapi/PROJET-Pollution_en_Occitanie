@@ -10,7 +10,7 @@ folium.GeoJson(geojson_url, name='occitanie').add_to(m)
 
 # Ajouter des points de couleur à la carte
 points_interet = [
-    {'location': [43.6047, 1.4442], 'popup': 'Toulouse'},
+    {'location': [float(43.6047), float(1.4442)], 'popup': 'Toulouse'},
     {'location': [43.6116, 3.8770], 'popup': 'Montpellier'},
     {'location': [42.9833, 1.1500], 'popup': 'Saint-Girons'},
     {'location': [44.3333, 2.5667], 'popup': 'Rodez'},
@@ -23,32 +23,25 @@ points_interet = [
 ]
 
 #Fonction pour définir la taille du point selon le taux de pollution
-def diam(point):
-    return 5000
-
-#for point in points_interet:
-    folium.Circle(
-        location=point['location'],
-        radius=diam(point),
-        color='red',
-        fill=True,
-        fill_color='red',
-        fill_opacity=0.5,
-        popup=point['popup']
-    ).add_to(m)
+class point:
+    def __init__(self,loc,quant):
+        self.loc=loc
+        self.quant=quant
+    
+    def diam(self,quant):
+        return(self.quant)
 
 l=[]
 for point in points_interet:
     # Vérifier que le point a des coordonnées valides
-    if isinstance(point['location'], list) and len(point['location']) == 2:
+    if isinstance(point['location'], list) and len(point['location']) == 2 :
         # Ajouter les coordonnées à la liste 'l'
         l.append(point['location'])
-        folium.Marker(
+        folium.map.Marker(
             location=point['location'],
-            icon=None,
             popup=folium.Popup(point['popup']),
-            tooltip=folium.Tooltip(point['popup'])
-            ).add_to(m)
+            tooltip=folium.Tooltip(point['popup']),
+        ).add_to(m)
 
 plugins.HeatMap(l, name='HeatMap', min_opacity=0.5, max_zoom=18, radius=25, blur=15, gradient=None, overlay=True, control=True, show=True).add_to(m)
 
@@ -58,4 +51,3 @@ m.save('ma_carte.html')
 #on va utiliser le pm10 seulement, points sur les chefs lieu, station "urbain"
 #Kenewy s'occupe du traitement de données
 #délimiter les départements aussi et rendre visible les chefs lieux qu'on va étudier
-#faire des points plus jolis (type "difusuion" ?)
