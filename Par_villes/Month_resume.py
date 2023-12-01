@@ -1,18 +1,12 @@
 #%%
 
 import pandas as pd
-import calendar
-import matplotlib.dates as mdates
-import matplotlib.pyplot as plt
-import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 from Month import *
 
 #%%
 
-
-# Créer le dataframe pour affichage des moyennes par jour
+# Création du dataframe pour affichage des minimum, maximum et moyenne par jour
 
 def resume(data, station):
     df = extraction(data, station)
@@ -20,47 +14,114 @@ def resume(data, station):
     df["jour"] = df.index.date
     df.rename(columns={"nom_poll": "Polluants"}, inplace=True)
     df_moy = (
-        df.groupby(["Polluants", "jour"])["valeur"]
-        .mean()
+        df.groupby(["Polluants", "jour"]).agg(min = ("valeur", min), max = ("valeur", max), moyenne = ("valeur", 'mean'))
         .reset_index()
     )
     return df_moy
 
-def set_values(row, value):
-    return value[row]
+# Pour gestion de la transparence des couleurs
 
-def ajout_norme(df):
-    map_dictionary = {'NO2': 10, 'PM10': 15, 'PM2.5': 5, 'O3': 60, 'NO': 0, 'NOX': 0}
-    df["Seuil"] = df["Polluants"].apply(set_values, args=(map_dictionary,))
-    return df
+def hex_rgba(hex, transparency):
+    col_hex = hex.lstrip('#')
+    col_rgb = list(int(col_hex[i:i+2], 16) for i in (0, 2, 4))
+    col_rgb.extend([transparency])
+    areacol = tuple(col_rgb)
+    return areacol
 
-
-# Trace les données moyennes
+# Trace les valeurs minimales, maximales, moyennes ainsi que le seuil de référence
 
 def trace_resume(data, station) :
-    df = ajout_norme(resume(data, station))
-    df.rename(columns={"valeur": "Concentration moyenne (µg/m³)"}, inplace=True)
-    fig = px.line(
-        df,
-        x = "jour",
-        y = ["Concentration moyenne (µg/m³)","Seuil"],
-        color="Polluants",
-    )
-    n = df["Polluants"].nunique()
-    for i in range(n):
-        fig['data'][2*i+1]['line']['dash'] = 'dot'
+    df = resume(data, station)
+    fig = go.Figure()
+    colors = px.colors.qualitative.Plotly
+    rgba = [hex_rgba(c, transparency=0.2) for c in colors]
+    c =0
+    for i in df["Polluants"].unique() : 
+        c +=1
+        new_col = colors[c]
+        col_fond = rgba[c]
+        df_poll = df[(df.Polluants == i)]
+        x = df_poll["jour"]
+        fig.add_traces(go.Scatter(
+            x = x,
+            y = df_poll["moyenne"],
+            mode = 'lines',
+            name = i,
+            legendgroup = i,
+            line = dict(color=new_col, width=2.5)
+        )
+        )
+        fig.add_traces(go.Scatter(
+            name = 'Upper Bound',
+            x = x,
+            y = df_poll["max"],
+            legendgroup = i,
+            showlegend=False,
+            line=dict(width=0)
+        )
+        )
+        fig.add_traces(go.Scatter(
+            name = 'Lower Bound',
+            x = x,
+            y = df_poll["min"],
+            fill = 'tonexty',
+            legendgroup = i,
+            showlegend=False,
+            line=dict(width=0),
+            fillcolor= 'rgba'+str(col_fond),
+        )
+        )
+        if i == 'PM2.5' :
+            fig.add_traces(go.Scatter(
+                line=dict(color=new_col, dash='dot'),
+                x = x,
+                y = [5]*len(x),
+                # line_color = new_col,
+                legendgroup = i,
+                showlegend=False,
+            ))
+        if i == 'PM10' :
+            fig.add_traces(go.Scatter(
+                line=dict(color=new_col, dash='dot'),
+                x = x,
+                y = [15]*len(x),
+                # line_color = new_col,
+                legendgroup = i,
+                showlegend=False,
+            ))
+        if i == 'O3' :
+            fig.add_traces(go.Scatter(
+                line=dict(color=new_col, dash='dot'),
+                x = x,
+                y = [60]*len(x),
+                # line_color = new_col,
+                legendgroup = i,
+                showlegend=False,
+            ))
+        if i == 'NO2' :
+            fig.add_traces(go.Scatter(
+                line=dict(color=new_col, dash='dot'),
+                x = x,
+                y = [10]*len(x),
+                # line_color = new_col,
+                legendgroup = i,
+                showlegend=False,
+            ))
     fig.update_layout(
-        xaxis_title="Date", yaxis_title="Concentration moyenne et seuil de référence (µg/m³)"
+        xaxis_title="Date",
+        yaxis_title="Concentration (µg/m³)",
+        title_text = "Concentrations minimale, maximale, moyenne journalières et seuils de référence (OMS)"
     )
-    # fig.update_yaxes(minallowed=0)
     fig.show()
 
-# Pour test :
+
+
+
+# # Pour test :
 # data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
 # station = 'Montpellier - Prés d Arènes Urbain'
 # resume(data,station)
 # trace_resume(data, station)
-
 
 
 # %%
