@@ -1,6 +1,6 @@
 
 #%%
-def tracegraphe(url, selected_attributes, city_name='TOULOUSE'):
+def tracegraphe(url, selected_attributes, city_name):
     # Fonction pour récupérer les données de pollution
     def get_pollution_data(url, selected_attributes, city_name):
         response = requests.get(url)
@@ -35,12 +35,10 @@ def tracegraphe(url, selected_attributes, city_name='TOULOUSE'):
         data = average_data[average_data['nom_poll'] == pollutant]
         plt.plot(data['date_debut'].dt.to_timestamp(), data['valeur'], label=pollutant, marker='o')
 
-    plt.title(f'Moyenne de concentration des polluants à {city_name} par mois')
+    plt.title(f'Moyenne de concentration des polluants à {city_name} par mois ')
     plt.xlabel('Date')
-    plt.ylabel('Moyenne de Concentration')
+    plt.ylabel('Moyenne de Concentration en μg/m3')
     plt.legend()
     plt.show()
-
-
 
 # %%
