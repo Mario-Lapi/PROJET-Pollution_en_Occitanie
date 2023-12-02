@@ -47,57 +47,51 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="pollution-en-occitanie" class="level1">
 <h1>Pollution en Occitanie</h1>
-<p>Le but de ce projet en groupe est de créer un site internet présentant une étude de la pollution de l’air en Occitanie à partir de données de ATMO Occitanie et SYNOP data.</p>
+<p>“Pollution en Occitanie” est un projet de visualisation de données de pollution atmosphérique dans les zones urbaines de la région Occitanie sur les cinq dernières années. Les polluants observés sont :</p>
+<ul>
+<li>Les oxydes d’azote (NOx), regroupant le monoxyde et le dioxyde d’azote (NO et NO2)</li>
+<li>L’ozone (03)</li>
+<li>Les particules fines (PM10 et PM2.5)</li>
+</ul>
+<p>Les données de pollution sont fournies par :</p>
+<ul>
+<li>Occitanie pollution datasets: <a href="https://data-atmo-occitanie.opendata.arcgis.com/pages/liste-des-flux">Atmo Occitanie</a></li>
+</ul>
+<p>Elles sont mises en relation avec des données météorologiques fournies par :</p>
+<ul>
+<li>Weather forecast: <a href="https://public.opendatasoft.com/explore/dataset/donnees-synop-essentielles-omm/api/?sort=date">SYNOP data</a></li>
+</ul>
+<section id="site-internet" class="level2">
+<h2 class="anchored" data-anchor-id="site-internet">Site internet</h2>
+<p>Le site est accessible à partir de l’URL suivant :</p>
+<p><a href="https://cmottier.github.io/PROJET-Pollution_en_Occitanie/" class="uri">https://cmottier.github.io/PROJET-Pollution_en_Occitanie/</a></p>
+</section>
+<section id="auteurs" class="level2">
+<h2 class="anchored" data-anchor-id="auteurs">Auteurs</h2>
+<ul>
+<li>Khadidiatou Kenewy DIALLO : <a href="mailto:khadidiatou-kenewy.diallo@etu.umontpellier.fr">khadidiatou-kenewy.diallo@etu.umontpellier.fr</a>,</li>
+<li>Mario LAPI : <a href="mailto:mario.lapi@etu.umontpellier.fr">mario.lapi@etu.umontpellier.fr</a>,</li>
+<li>Jeanne MANNEQUIN : <a href="mailto:jeanne.mannequin@etu.umontpellier.fr">jeanne.mannequin@etu.umontpellier.fr</a>,</li>
+<li>Camille MOTTIER : <a href="mailto:camille.mottier@etu.umontpellier.fr">camille.mottier@etu.umontpellier.fr</a>.</li>
+</ul>
+</section>
 <section id="descriptif" class="level2">
 <h2 class="anchored" data-anchor-id="descriptif">Descriptif</h2>
-<p>Dans un premier temps, la page internet comportera une carte de la region, à partir de laquelle on pourra observer la pollution de l’air dans différentes villes. Selectionner une ville nous permettra d’avoir accès à des représentations graphiques parametrables en fonction des polluants et des échelles de temps.</p>
-</section>
-<section id="choix-des-données" class="level2">
-<h2 class="anchored" data-anchor-id="choix-des-données">Choix des données</h2>
-<p>Pour mener à bien ce projet, nous aurons besoin de données que nous allons télécharger (au format .csv) directement sur le site ATMO Occitanie pour ce qui concerne la pollution. Ici, seules les données concernant la cencentration de certains polluants athmosphériques (NO2, PM, O3, NOx, NO, SO2) dans les zones urbaines de la région Occitanie nous serons utiles. Toutefois, étant donnée que la metéo peut elle aussi avoir une influence sur la qualité de l’air, nous utiliserons également les données de SYNOP pour compléter nos analyses.</p>
-</section>
-<section id="packages" class="level2">
-<h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<p>Pour ce projet sur la pollution de l’air en Occitanie, voici quelques-uns des packages Python les plus importants que nous devrions utiliser :</p>
-<ol type="1">
-<li><p>NumPy et Pandas : Ils sont essentiels pour la manipulation des données, le nettoyage, la transformation et l’analyse.</p></li>
-<li><p>Matplotlib et Seaborn : Ces bibliothèques sont cruciales pour la création de graphiques et de visualisations de données.</p></li>
-<li><p>Requests : Utile pour effectuer des requêtes HTTP et récupérer des données depuis des sources en ligne, telles que les données de qualité de l’air fournies par les agences gouvernementales.</p></li>
-<li><p>Scikit-Learn : Si nous prévoyons de réaliser des analyses plus avancées, comme la modélisation de la qualité de l’air.</p></li>
-<li><p>Plotly : Permet de créer des graphiques interactifs pour visualiser les données.</p></li>
-<li><p>Streamlit : pour créer une application web interactive pour visualiser et analyser les données de la pollution de l’air.</p></li>
-</ol>
-<p>Ces packages couvrent les aspects essentiels de la collecte, de l’analyse et de la visualisation des données de qualité de l’air. Nous pourrions ainsi effectuer une analyse approfondie et présenter nos résultats de manière efficace.</p>
-</section>
-<section id="répartition-du-travail" class="level2">
-<h2 class="anchored" data-anchor-id="répartition-du-travail">Répartition du travail</h2>
-<pre class="mermaid"><code>gantt
-    title Projet Pollution en Occitanie
-    dateFormat DD-MM
-    axisFormat %d/%m
-    section Deadlines
-        Évaluation Intermédiaire : milestone, 23-10, 0d
-        Finalisation Github : milestone, 10-12, 0d
-        Oral : milestone, 15-12, 0d
-    section Pré-projet
-        Readme :06-10, 15d
-    section Développement
-        Gestion de données : 20-10, 30d
-        Quarto          :a1,20-10, 45d
-        Graphiques      :g1, 20-10, 40d
-        Carte           :20-10, 40d
-        Paramètrisation :12-11, 20d
-        Docu   :26-11, 13d
-    section Oral
-        Prépa oral : 05-12, 7d</code></pre>
-<p>Quatre branches principales de développement ont été identifiées :</p>
+<p>Le site contient différents objets de visualisations permettant les observations suivantes :</p>
 <ul>
-<li>Extraction et tri des données - gestion du téléchargement des données par l’utilisateur - package pooch (LAPI)</li>
-<li>Construction des graphiques en fonction des lieux, des polluants (DIALLO)</li>
-<li>Construction de la carte et intégration de données de pollution (MANNEQUIN)</li>
-<li>Écriture du fichier quarto, insertion des différents éléments Python, mise en place de l’intéractivité (MOTTIER)</li>
+<li>Comparaison géographique des chefs-lieux de dix départements de la région Occitanie (données manquantes pour trois départements).</li>
+<li>Comparaison temporelle des concentrations des principaux polluants au sein de ces chefs-lieux.</li>
 </ul>
-<p>Auteurs: DIALLO, LAPI, MANNEQUIN, MOTTIER</p>
+</section>
+<section id="packages-python-utilisés" class="level2">
+<h2 class="anchored" data-anchor-id="packages-python-utilisés">Packages Python utilisés</h2>
+<p>Voici les packages Python utilisés pour ce projet :</p>
+<ul>
+<li>Pandas : manipulations de Dataframe</li>
+<li>Matplotlib, Plotly, Seaborn : création de graphiques intéractifs</li>
+<li>Folium : création de carte</li>
+<li>Requests : importation de données en ligne</li>
+</ul>
 </section>
 </section>
 
