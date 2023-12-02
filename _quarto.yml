@@ -86,7 +86,7 @@ format:
     reference-location: margin
     citation-location: margin
     grid: 
-      body-width: 1800px
+      body-width: 1500px
     # self-contained: true
     # fig-format: svg
     # css: custom.scss
