@@ -27,7 +27,9 @@ Horloge_semaine(data, station)
 Horloge_weekend(data,station)
 
 ```
+
 ## Pollution sur l'année
+
 ```{python}
 import requests
 import pandas as pd
@@ -41,3 +43,4 @@ cityname = 'TARBES'
 
 tracegraph(url, selected_attributes, cityname)
 ```
+
