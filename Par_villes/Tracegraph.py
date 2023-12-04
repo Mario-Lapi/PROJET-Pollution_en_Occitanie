@@ -1,4 +1,9 @@
+
 #%%
+import requests
+import pandas as pd
+import matplotlib.pyplot as plt
+
 def tracegraph(url, selected_attributes, city_name):
     # Fonction pour récupérer les données de pollution
     def get_pollution_data(url, selected_attributes, city_name):
