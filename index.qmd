@@ -13,7 +13,7 @@ title: "Pollution en Occitanie"
 Ces visualisations permettent une comparaison géographique des chefs-lieux des départements d'Occitanie en terme de pollution, mais aussi l'observation des évolutions temporelles de la concentration au sein d'une ville (évolutions horaire, journalière et mensuelle).
 Les concentrations obtenues peuvent être mises en relation avec les seuils de référence fixés par l'OMS :
 
-![](Seuils.png)
+<img src="Seuils.png" style="width:500px;"/>
 
 ## Auteurs
 
