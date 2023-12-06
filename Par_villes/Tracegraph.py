@@ -1,9 +1,6 @@
 
 #%%
-<<<<<<< HEAD
-=======
 
->>>>>>> faa0f0216343fbf98ce35ad9dd7ad15883c642ab
 import requests
 import pandas as pd
 import matplotlib.pyplot as plt
