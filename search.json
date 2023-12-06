@@ -172,7 +172,7 @@
     "href": "Par_villes/Toulouse.html#pollution-sur-lannée",
     "title": "Pollution à Toulouse",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'TOULOUSE'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_journaliere_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'TOULOUSE'\n\ntracegraph(url, selected_attributes, cityname)"
   },
   {
     "objectID": "Par_villes/Montpellier.html",
