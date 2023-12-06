@@ -1,5 +1,9 @@
 #Entrer l'url json et les attributs à conserver
 #%%
+
+import requests
+import pandas as pd
+import matplotlib.pyplot as plt
 def get_pollution_data(url, selected_attributes, city_name):
         response = requests.get(url)
         
@@ -7,16 +11,18 @@ def get_pollution_data(url, selected_attributes, city_name):
             data = response.json()
             features = data.get('features', [])
             city_data = [feature['properties'] for feature in features if feature['properties']['nom_com'] == city_name]
-            city_data = [entry for entry in city_data if entry.get('valeur') is not None]
+            city_data1 = [entry for entry in city_data if entry.get('valeur') is not None]
             
-            for entry in city_data:
+            for entry in city_data1:
                 entry['date_debut'] = pd.to_datetime(entry['date_debut'], unit='ms')
             
-            df = pd.DataFrame(city_data, columns=selected_attributes)
+            df = pd.DataFrame(city_data1, columns=selected_attributes)
             return df
         else:
             print(f"Erreur de requête avec le code {response.status_code}")
             return None
+
+
 
 
 # %%

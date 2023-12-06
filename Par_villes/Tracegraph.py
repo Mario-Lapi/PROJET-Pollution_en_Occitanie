@@ -1,10 +1,9 @@
-
 #%%
 import requests
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 
-def tracegraph(url, selected_attributes, city_name):
+def tracegraph_interactive(url, selected_attributes, city_name):
     # Fonction pour récupérer les données de pollution
     def get_pollution_data(url, selected_attributes, city_name):
         response = requests.get(url)
@@ -33,16 +32,24 @@ def tracegraph(url, selected_attributes, city_name):
     # Grouper par mois et par polluant, calculer la moyenne
     average_data = city_data_frame.groupby(['nom_poll', city_data_frame['date_debut'].dt.to_period("M")])['valeur'].mean().reset_index()
 
+    # Créer une figure interactive Plotly
+    fig = go.Figure()
+
     # Tracer des courbes pour chaque polluant
-    plt.figure(figsize=(10, 6))
     for pollutant in average_data['nom_poll'].unique():
         data = average_data[average_data['nom_poll'] == pollutant]
-        plt.plot(data['date_debut'].dt.to_timestamp(), data['valeur'], label=pollutant, marker='o')
+        fig.add_trace(go.Scatter(x=data['date_debut'].dt.to_timestamp(), y=data['valeur'], mode='lines+markers', name=pollutant))
 
-    plt.title(f'Moyenne de concentration des polluants à {city_name} par mois ')
-    plt.xlabel('Date')
-    plt.ylabel('Moyenne de Concentration en μg/m3')
-    plt.legend()
-    plt.show()
+    # Configurer la mise en page interactive
+    fig.update_layout(title=f'Moyenne de concentration des polluants à {city_name} par mois ',
+                      xaxis_title='Date',
+                      yaxis_title='Moyenne de Concentration en μg/m3',
+                      xaxis=dict(type='date'),
+                      xaxis_rangeslider_visible=True)
+
+    # Afficher la figure interactive
+    fig.show()
+
+
 
 # %%

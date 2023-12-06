@@ -37,7 +37,7 @@ import matplotlib.pyplot as plt
 from Tracegraph import *
 
 
-url = "https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+url = "https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_journaliere_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
 selected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']
 cityname = 'TOULOUSE'
 
