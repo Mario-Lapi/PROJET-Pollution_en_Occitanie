@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import plotly.graph_objects as go
 
-def tracegraph_interactive(url, selected_attributes, city_name):
+def tracegraph(url, selected_attributes, city_name):
     # Fonction pour récupérer les données de pollution
     def get_pollution_data(url, selected_attributes, city_name):
         response = requests.get(url)
