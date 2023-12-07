@@ -69,5 +69,6 @@ for city in data3.itertuples():
         fill_color='purple'
     ).add_to(m)
 
-#Enregistrer la carte au format html
+
+# Enregistrer la carte en tant que fichier HTML
 m.save('ma_carte.html')
