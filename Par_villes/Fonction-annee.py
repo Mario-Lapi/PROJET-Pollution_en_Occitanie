@@ -6,25 +6,20 @@ from Month import *
 
 #%%
 
-"""
-Module permettant la construction du graphe donnant les valeurs moyennes, minimales et maximales sur un mois
-L'extraction des données se fait grâce au module Month
-"""
-
-# resume crée un dataframe avec les valeurs des minimums, maximums et moyennes par jour
+# Création du dataframe pour affichage des minimum, maximum et moyenne par jour
 
 def resume(data, station):
     df = extraction(data, station)
     df = df.set_index(["Date"])
-    df["jour"] = df.index.date
+    df["mois"] = df.index.date
     df.rename(columns={"nom_poll": "Polluants"}, inplace=True)
     df_moy = (
-        df.groupby(["Polluants", "jour"]).agg(min = ("valeur", min), max = ("valeur", max), moyenne = ("valeur", 'mean'))
+        df.groupby(["Polluants", "mois"]).agg(min = ("valeur", min), max = ("valeur", max), moyenne = ("valeur", 'mean'))
         .reset_index()
     )
     return df_moy
 
-# hex_rgba gère la transparence des couleurs
+# Pour gestion de la transparence des couleurs
 
 def hex_rgba(hex, transparency):
     col_hex = hex.lstrip('#')
@@ -33,7 +28,7 @@ def hex_rgba(hex, transparency):
     areacol = tuple(col_rgb)
     return areacol
 
-# trace_resume donne un graphe avec les valeurs minimales, maximales, moyennes ainsi que le seuil de référence
+# Trace les valeurs minimales, maximales, moyennes ainsi que le seuil de référence
 
 def trace_resume(data, station) :
     df = resume(data, station)
@@ -119,6 +114,14 @@ def trace_resume(data, station) :
     )
     fig.show()
 
+
+
+
+# # Pour test :
+# data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+# station = 'Montpellier - Prés d Arènes Urbain'
+# resume(data,station)
+# trace_resume(data, station)
 
 
 # %%

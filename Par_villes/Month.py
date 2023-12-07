@@ -8,9 +8,12 @@ import plotly.graph_objects as go
 
 #%%
 
-# Module comportant les fonctions d'étude des données horaires sur 30 jours
+"""
+Module comportant les fonctions d'extraction de données pour la ville choisie
+et les fonctions d'étude des données horaires sur 30 jours
+"""
 
-# Extraction extrait des données les dates et les valeurs relevées pour la station choisie, pour tous les polluants
+# extraction extrait des données les dates et les valeurs relevées pour la station choisie, pour tous les polluants
 
 def extraction(donnees,station) :
     df = donnees.loc[(donnees["nom_station"] == station),["nom_poll","valeur","date_debut"]]
@@ -18,7 +21,7 @@ def extraction(donnees,station) :
     df = df.rename(columns={'date_debut': 'Date'})
     return df
 
-# table renvoie un dataframe avec en colonnes : les dates et tous les différents polluants en parallèle
+# table renvoie un dataframe avec en colonnes les dates et tous les différents polluants
 
 def table(donnees,station) :
     data = extraction(donnees,station)
@@ -37,16 +40,20 @@ def table(donnees,station) :
 
 #%%
 
-# Trace_px affiche sur un même graphique les courbes des rélevés pour les polluants (à cocher)
+# Trace_px affiche sur un même graphique les courbes des concentrations des polluants (à cocher)
 
 def Trace_px(donnees,station) :
     df = table(donnees,station)
-    fig = px.line(df, width=1000, height=500,
-     title = "Concentration - " + station,
-     labels=dict(value='Concentration (µg/m³)', variable='Polluant'))
+    fig = px.line(
+        df, 
+        width=1000,
+        height=500,
+        title = "Concentration - " + station,
+        labels=dict(value='Concentration (µg/m³)', variable='Polluant')
+    )
     fig.show()
 
-# Trace_go affiche les différents polluants avec un curseur pour la barre de temps
+# Trace_go affiche les concentrations des différents polluants (à cocher) avec un curseur pour la barre de temps
 
 def Trace_go(donnees,station,ville) :
     data = table(donnees,station)
