@@ -56,10 +56,6 @@ data3 = pd.DataFrame({
    'name':name,
    'value':value
 })
-print(data3)
-class Pollution:
-    def color(self):
-        pass
 
 for city in data3.itertuples():
     local_deformation = math.cos(city.lat * math.pi / 180)

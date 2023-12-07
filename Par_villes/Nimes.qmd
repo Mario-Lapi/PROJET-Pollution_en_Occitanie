@@ -1,0 +1,45 @@
+
+---
+title : "Pollution à Nîmes"
+---
+
+## Pollution sur un mois et variations horaires
+
+```{python}
+# import pandas as pd
+# import matplotlib.dates as mdates
+# import matplotlib.pyplot as plt
+# import plotly.express as px
+# import plotly.graph_objects as go
+from Month import *
+from Horloge import *
+from Month_resume import *
+
+data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+
+station = 'Nîmes Sud - Urbain'
+
+Trace_go(data,station,'Nîmes')
+
+trace_resume(data, station)
+
+Horloge_semaine(data, station)
+
+Horloge_weekend(data,station)
+
+```
+
+## Pollution sur l'année
+```{python}
+import requests
+import pandas as pd
+import matplotlib.pyplot as plt
+from Tracegraph import *
+
+
+url = "https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+selected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']
+cityname = 'NIMES'
+
+tracegraph(url, selected_attributes, cityname)
+```
