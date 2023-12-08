@@ -1,0 +1,382 @@
+---
+title: "Pollution en Occitanie"
+author: "Khadidiatou Kenewy DIALLO, Mario LAPI, Jeanne MANNEQUIN, Camille MOTTIER"
+format: 
+    revealjs:
+        theme: sky
+---
+
+## Introduction
+
+- **Le problème initial :**
+
+Construction d'un site de visualisation des données récentes de pollution en Occitanie.
+
+Données issues de : [Atmo Occitanie](https://data-atmo-occitanie.opendata.arcgis.com/pages/liste-des-flux)
+
+- **Les outils :**
+
+  - Python
+  - Quarto
+
+
+## Les grands axes de réflexion
+
+Comment rendre visible la dissimilarité...
+
+- géographique
+- entre polluants
+- saisonnière
+- horaire
+
+
+## Visualisation géographique
+
+La réflexion
+Le code...
+La carte (dans une autre diapo)
+
+## Comparaison saisonnière
+
+La réflexion
+Le code...
+Le rendu sur un exemple (dans une autre diapo)
+
+## Évolution sur 30 jours
+
+Module Month
+
+```{.python}
+import pandas as pd
+import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.graph_objects as go
+
+"""
+Module comportant les fonctions d'extraction de données pour la ville choisie
+et les fonctions d'étude des données horaires sur 30 jours
+"""
+
+# extraction extrait des données les dates et les valeurs relevées pour la station choisie, pour tous les polluants
+
+def extraction(donnees,station) :
+    df = donnees.loc[(donnees["nom_station"] == station),["nom_poll","valeur","date_debut"]]
+    df["date_debut"] = pd.to_datetime(df["date_debut"], format = '%Y/%m/%d %H:%M:%S%z')
+    df = df.rename(columns={'date_debut': 'Date'})
+    return df
+
+# table renvoie un dataframe avec en colonnes les dates et tous les différents polluants
+
+def table(donnees,station) :
+    data = extraction(donnees,station)
+    Poll = data["nom_poll"].unique()
+    df = data.loc[data["nom_poll"] == Poll[0],["valeur", "Date"]]
+    df = df.rename(columns={'valeur': Poll[0]})
+    for i in range(1,len(Poll)) :
+        p = Poll[i]
+        d = data.loc[data["nom_poll"] == p,["valeur", "Date"]]
+        d = d.rename(columns={'valeur': p})
+        df = pd.merge(df, d, on = "Date")
+    df = df.sort_values(by=['Date'], ascending=[True])
+    return df.set_index(["Date"])
+
+# Trace_go affiche les concentrations des différents polluants (à cocher) avec un curseur pour la barre de temps
+
+def Trace_go(donnees,station,ville) :
+    data = table(donnees,station)
+    fig = go.Figure()
+    for i in data.columns :
+        fig.add_trace(
+            go.Scatter(x=list(data.index), y=list(data[i]), name=i)
+        )
+    fig.update_layout(
+        title_text = "Concentration des polluants à " + ville,
+        # labels = dict(y='Concentration (µg/m³)', variable='Polluant')
+    ) 
+    fig.update_layout(
+        yaxis=dict(
+            title='Concentration (µg/m³)'
+        )
+    )
+    fig.update_layout(
+        xaxis=dict(
+            rangeslider=dict(
+                visible=True
+            ),
+            type="date"
+        )
+    )
+    fig.show()
+```
+
+## Évolution sur 30 jours
+
+```{python}
+#| echo: true
+#| code-fold: true
+
+# Extrait du quarto de Montpellier
+
+from Month import *
+
+data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+
+station = 'Montpellier - Prés d Arènes Urbain'
+
+Trace_go(data,station,'Montpellier')
+```
+
+
+
+
+## Résumé des 30 jours
+
+Module Month_resume
+
+```{python}
+
+#| echo: true
+#| code-fold: true
+
+import pandas as pd
+import plotly.graph_objects as go
+from Month import *
+
+#%%
+
+"""
+Module permettant la construction du graphe donnant les valeurs moyennes, minimales et maximales sur un mois
+L'extraction des données se fait grâce au module Month
+"""
+
+# resume crée un dataframe avec les valeurs des minimums, maximums et moyennes par jour
+
+def resume(data, station):
+    df = extraction(data, station)
+    df = df.set_index(["Date"])
+    df["jour"] = df.index.date
+    df.rename(columns={"nom_poll": "Polluants"}, inplace=True)
+    df_moy = (
+        df.groupby(["Polluants", "jour"]).agg(min = ("valeur", min), max = ("valeur", max), moyenne = ("valeur", 'mean'))
+        .reset_index()
+    )
+    return df_moy
+
+# hex_rgba gère la transparence des couleurs
+
+def hex_rgba(hex, transparency):
+    col_hex = hex.lstrip('#')
+    col_rgb = list(int(col_hex[i:i+2], 16) for i in (0, 2, 4))
+    col_rgb.extend([transparency])
+    areacol = tuple(col_rgb)
+    return areacol
+
+# trace_resume donne un graphe avec les valeurs minimales, maximales, moyennes ainsi que le seuil de référence
+
+def trace_resume(data, station) :
+    df = resume(data, station)
+    fig = go.Figure()
+    colors = px.colors.qualitative.Plotly
+    rgba = [hex_rgba(c, transparency=0.2) for c in colors]
+    c =0
+    for i in df["Polluants"].unique() : 
+        c +=1
+        new_col = colors[c]
+        col_fond = rgba[c]
+        df_poll = df[(df.Polluants == i)]
+        x = df_poll["jour"]
+        fig.add_traces(go.Scatter(
+            x = x,
+            y = df_poll["moyenne"],
+            mode = 'lines',
+            name = i,
+            legendgroup = i,
+            line = dict(color=new_col, width=2.5)
+        )
+        )
+        fig.add_traces(go.Scatter(
+            name = 'Upper Bound',
+            x = x,
+            y = df_poll["max"],
+            legendgroup = i,
+            showlegend=False,
+            line=dict(width=0)
+        )
+        )
+        fig.add_traces(go.Scatter(
+            name = 'Lower Bound',
+            x = x,
+            y = df_poll["min"],
+            fill = 'tonexty',
+            legendgroup = i,
+            showlegend=False,
+            line=dict(width=0),
+            fillcolor= 'rgba'+str(col_fond),
+        )
+        )
+        if i == 'PM2.5' :
+            fig.add_traces(go.Scatter(
+                line=dict(color=new_col, dash='dot'),
+                x = x,
+                y = [5]*len(x),
+                # line_color = new_col,
+                legendgroup = i,
+                showlegend=False,
+            ))
+        if i == 'PM10' :
+            fig.add_traces(go.Scatter(
+                line=dict(color=new_col, dash='dot'),
+                x = x,
+                y = [15]*len(x),
+                # line_color = new_col,
+                legendgroup = i,
+                showlegend=False,
+            ))
+        if i == 'O3' :
+            fig.add_traces(go.Scatter(
+                line=dict(color=new_col, dash='dot'),
+                x = x,
+                y = [60]*len(x),
+                # line_color = new_col,
+                legendgroup = i,
+                showlegend=False,
+            ))
+        if i == 'NO2' :
+            fig.add_traces(go.Scatter(
+                line=dict(color=new_col, dash='dot'),
+                x = x,
+                y = [10]*len(x),
+                # line_color = new_col,
+                legendgroup = i,
+                showlegend=False,
+            ))
+    fig.update_layout(
+        xaxis_title="Date",
+        yaxis_title="Concentration (µg/m³)",
+        title_text = "Concentrations minimale, maximale, moyenne journalières et seuils de référence (OMS)"
+    )
+    fig.show()
+    
+# Comandes extraites du fichier quarto :
+
+data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+
+station = 'Montpellier - Prés d Arènes Urbain'
+
+trace_resume(data, station)
+```
+
+## Dissimilarités horaires
+
+Module Horloge
+
+```{.python}
+import pandas as pd
+import calendar
+import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.graph_objects as go
+from Month import *
+
+#%%
+"""
+Module permettant la construction des graphes en forme d'horloge permettant les comparaisons horaires
+L'extraction des données se fait grâce au module Month
+"""
+
+# Semaine crée le dataframe pour l'affichage horaire en semaine (extraction des jours de semaine)
+
+def semaine(data, station):
+    df = extraction(data, station)
+    df = df.set_index(["Date"])
+    df["jour_semaine"] = df.index.day_of_week
+    df_semaine = df.loc[(df["jour_semaine"] < 5 ), : ]
+    df_semaine = df_semaine.drop('jour_semaine', axis = 1)
+    return df_semaine
+
+# Weekend crée le dataframe pour l'affichage horaire en weekend (extraction des jours du weekend)
+
+def weekend(data, station):
+    df = extraction(data, station)
+    df = df.set_index(["Date"])
+    df["jour_semaine"] = df.index.day_of_week
+    df_weekend = df.loc[(df["jour_semaine"] >4 ), : ]
+    df_weekend = df_weekend.drop('jour_semaine', axis = 1)
+    return df_weekend
+
+# Horloge trace la moyenne des données horaires en polar
+
+def Horloge(df) :
+    df.rename(columns={"nom_poll": "Polluants"}, inplace=True)
+    df["heure"] = df.index.hour
+    df_polar = (
+        df.groupby(["Polluants","heure"])["valeur"]
+        .mean()
+        .reset_index()
+    )
+    df_polar = df_polar.astype({"heure": str}, copy=False)
+    fig = px.line_polar(
+        df_polar,
+        r="valeur",
+        theta="heure",
+        color="Polluants",
+    )
+    return fig
+
+# Horloge_semaine affiche le graphique pour les jours de semaine
+
+def Horloge_semaine(data, station):
+    fig = Horloge(semaine(data, station))
+    fig.update_layout(title="Concentration moyenne horaire en semaine, au cours du dernier mois")
+    fig.show()
+
+# Horloge_weekend affiche le graphique pour les jours de weekend
+
+def Horloge_weekend(data, station):
+    fig = Horloge(weekend(data, station))
+    fig.update_layout(title="Concentration moyenne horaire en weekend, au cours du dernier mois")
+    fig.show()
+```
+
+## Dissimilarités horaires
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{python}
+from Month import *
+from Horloge import * 
+
+data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+
+station = 'Montpellier - Prés d Arènes Urbain'
+
+Horloge_semaine(data, station)
+
+```
+
+:::
+
+::: {.column width="50%"}
+```{python}
+from Month import *
+from Horloge import * 
+
+data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+
+station = 'Montpellier - Prés d Arènes Urbain'
+
+Horloge_weekend(data,station)
+```
+
+:::
+
+::::
+
+## Pour conclure, des axes de réflexion
+
+
