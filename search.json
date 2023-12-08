@@ -4,7 +4,7 @@
     "href": "Geographique.html",
     "title": "Comparaison des chefs-lieux",
     "section": "",
-    "text": "Code\nimport folium\nfrom folium import plugins\nimport pandas as pd\nimport math\n\n# Créer une carte focus sur la région\nm = folium.Map(location=[43.6000,1.4400], zoom_start=8,tiles='CartoDB Positron', attr='CartoDB Positron')\n\n# Découper la carte en départements \ngeojson_url = 'https://france-geojson.gregoiredavid.fr/repo/regions/occitanie/departements-occitanie.geojson'\nfolium.GeoJson(geojson_url, name='occitanie').add_to(m)\n\n# Créer les poinst chef-lieux que nous utiliserons\n    # On donne une localisation centrale à ces points\n    # La concentration correspond aux valeurs dans le fichier 'villes.PM10.ccsv'\ndata = pd.DataFrame({\n   'lat':[43.6047, 43.6116, 42.9833, 44.3333, 43.8333, 43.6500, 43.2333, 42.6833, 43.9333, 44.0167],\n   'lon':[1.4442, 3.8770, 1.1500, 2.5667, 4.3500, 0.5833, 0.0833, 2.8833, 2.1500, 1.3500],\n   'name':['Toulouse', 'Montpellier', 'Saint-Girons', 'Rodez', 'Nîmes', 'Auch', 'Tarbes', 'Perpignan', 'Albi', 'Montauban'],\n   'value':[16.0, 17.2, 11.9, 11.2, 14.4, 13.1, 13.2, 20.9, 13.5, 14.0]\n})\n\nfor city in data.itertuples():\n    local_deformation = math.cos(city.lat * math.pi / 180)\n    folium.Circle(\n        location=[city.lat, city.lon],\n        popup=city.value,\n        tooltip=folium.Tooltip(city.name),\n        radius=city.value * 800.0 * local_deformation,\n        color='crimson',\n        fill=True,\n        fill_color='crimson'\n    ).add_to(m)\n\n\n# Montrer la carte\nm\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\n\n\n\n Back to top"
+    "text": "Code\nimport folium\nimport pandas as pd\nimport math\nimport csv\n\n# Créer une carte focus sur la région\nm = folium.Map(location=[43.6000,1.4400], zoom_start=8,tiles='CartoDB Positron', attr='CartoDB Positron')\n\n# Découper la carte en départements \ngeojson_url = 'https://france-geojson.gregoiredavid.fr/repo/regions/occitanie/departements-occitanie.geojson'\nfolium.GeoJson(geojson_url, name='occitanie').add_to(m)\n\n# Nom du fichier CSV\nnom_fichier_csv = 'Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv'\n\n# Ouvrir le fichier CSV en mode lecture\nwith open(nom_fichier_csv, newline='') as fichier_csv:\n    lecteur_csv = csv.reader(fichier_csv)\n    l=[]\n    data2=[]\n    # Lire les lignes du fichier CSV\n    for ligne in lecteur_csv:\n        if ligne[3] not in l:\n            l.append(ligne[3])\n        data2.append(ligne)\n# Regrouper les données de façon à les utiliser (une station par ville qui est la moyenne des autres stations sur la même ville)\ndata=[]\nliste=[]\np=0\nfor ville in l[1:]:\n    s=0\n    n=0\n    for ligne in data2:\n        if ligne[3] == ville:\n            s+=float(ligne[11])\n            n+=1\n            if ligne[3] not in liste:\n                data.append(ligne)\n            liste.append(ville)\n    s=s/n\n    data[p][11]=s\n    p+=1\n# Créer un data utilisable par folium\nlat=[]\nlon=[]\nname=[]\nvalue=[]     \nfor ligne in data:\n    lat.append(float(ligne[1]))\n    lon.append(float(ligne[0]))\n    name.append(ligne[3])\n    value.append(float(ligne[11]))\ndata3 = pd.DataFrame({\n   'lat':lat,\n   'lon':lon,\n   'name':name,\n   'value':value\n})\n\nfor city in data3.itertuples():\n    local_deformation = math.cos(city.lat * math.pi / 180)\n    folium.Circle(\n        location=[city.lat, city.lon],\n        popup=city.value,\n        tooltip=folium.Tooltip(city.name),\n        radius=city.value * 800.0 * local_deformation,\n        color='purple',\n        fill=True,\n        fill_color='purple'\n    ).add_to(m)\n\n# Montrer la carte\nm\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "Par_villes/Albi.html",
@@ -25,7 +25,7 @@
     "href": "Par_villes/Albi.html#pollution-sur-lannée",
     "title": "Pollution à Albi",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'ALBI'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('ALBI'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'ALBI'\n\ntracegraph(url, selected_attributes, cityname)"
   },
   {
     "objectID": "Par_villes/Tarbes.html",
@@ -46,7 +46,7 @@
     "href": "Par_villes/Tarbes.html#pollution-sur-lannée",
     "title": "Pollution à Tarbes",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'TARBES'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('TARBES'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'TARBES'\n\ntracegraph(url, selected_attributes, cityname)"
   },
   {
     "objectID": "Par_villes/Auch.html",
@@ -67,7 +67,7 @@
     "href": "Par_villes/Auch.html#pollution-sur-lannée",
     "title": "Pollution à Auch",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'AUCH'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('AUCH'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'AUCH'\n\ntracegraph(url, selected_attributes, cityname)"
   },
   {
     "objectID": "Par_villes/Nimes.html",
@@ -88,7 +88,7 @@
     "href": "Par_villes/Nimes.html#pollution-sur-lannée",
     "title": "Pollution à Nîmes",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'NIMES'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('NIMES'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'NIMES'\n\ntracegraph(url, selected_attributes, cityname)"
   },
   {
     "objectID": "Par_villes/Saint_Girons.html",
@@ -109,7 +109,7 @@
     "href": "Par_villes/Saint_Girons.html#pollution-sur-lannée",
     "title": "Pollution à Saint-Girons",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'SAINT-GIRONS'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('SAINT-GIRONS'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'SAINT-GIRONS'\n\ntracegraph(url, selected_attributes, cityname)"
   },
   {
     "objectID": "index.html",
@@ -151,7 +151,7 @@
     "href": "Par_villes/Rodez.html#pollution-sur-lannée",
     "title": "Pollution à Rodez",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'RODEZ'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('RODEZ'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'RODEZ'\n\ntracegraph(url, selected_attributes, cityname)"
   },
   {
     "objectID": "Par_villes/Toulouse.html",
@@ -172,7 +172,7 @@
     "href": "Par_villes/Toulouse.html#pollution-sur-lannée",
     "title": "Pollution à Toulouse",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'TOULOUSE'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('TOULOUSE'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'TOULOUSE'\n\ntracegraph(url, selected_attributes, cityname)"
   },
   {
     "objectID": "Par_villes/Montpellier.html",
@@ -193,7 +193,7 @@
     "href": "Par_villes/Montpellier.html#pollution-sur-lannée",
     "title": "Pollution à Montpellier",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'MONTPELLIER'\n\ntracegraph(url, selected_attributes,cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('MONTPELLIER'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'MONTPELLIER'\n\ntracegraph(url, selected_attributes,cityname)"
   },
   {
     "objectID": "Par_villes/Perpignan.html",
@@ -214,7 +214,7 @@
     "href": "Par_villes/Perpignan.html#pollution-sur-lannée",
     "title": "Pollution à Perpignan",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'PERPIGNAN'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('PERPIGNAN'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'PERPIGNAN'\n\ntracegraph(url, selected_attributes, cityname)"
   },
   {
     "objectID": "Par_villes/Montauban.html",
@@ -235,6 +235,6 @@
     "href": "Par_villes/Montauban.html#pollution-sur-lannée",
     "title": "Pollution à Montauban",
     "section": "Pollution sur l’année",
-    "text": "Pollution sur l’année\n\n\nCode\nimport requests\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'MONTAUBAN'\n\ntracegraph(url, selected_attributes, cityname)"
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('MONTAUBAN'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'MONTAUBAN'\n\ntracegraph(url, selected_attributes, cityname)"
   }
 ]
