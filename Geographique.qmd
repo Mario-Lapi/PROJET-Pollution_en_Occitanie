@@ -16,7 +16,7 @@ geojson_url = 'https://france-geojson.gregoiredavid.fr/repo/regions/occitanie/de
 folium.GeoJson(geojson_url, name='occitanie').add_to(m)
 
 # Nom du fichier CSV
-nom_fichier_csv = '/home/jeannemannequin/HAX712X/PROJET-Pollution_en_Occitanie/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv'
+nom_fichier_csv = 'Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv'
 
 # Ouvrir le fichier CSV en mode lecture
 with open(nom_fichier_csv, newline='') as fichier_csv:
