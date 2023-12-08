@@ -31,7 +31,7 @@ Horloge_weekend(data,station)
 ## Pollution sur l'année
 
 ```{python}
-import Tracegraph
+from Tracegraph import *
 
 
 url = "https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('TARBES'))&outFields=*"
