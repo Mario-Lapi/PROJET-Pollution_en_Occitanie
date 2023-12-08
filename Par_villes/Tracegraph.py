@@ -1,6 +1,7 @@
 #%%
 import requests
 import pandas as pd
+import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
 def tracegraph(url, selected_attributes, city_name):
@@ -11,11 +12,24 @@ def tracegraph(url, selected_attributes, city_name):
         if response.status_code == 200:
             data = response.json()
             features = data.get('features', [])
-            city_data = [feature['properties'] for feature in features if feature['properties']['nom_com'] == city_name]
-            city_data = [entry for entry in city_data if entry.get('valeur') is not None]
             
-            for entry in city_data:
-                entry['date_debut'] = pd.to_datetime(entry['date_debut'], unit='ms')
+            if not features:
+                print(f"Aucune donnée trouvée pour {city_name}")
+                return None
+            
+            city_data = []
+            for feature in features:
+                if 'attributes' in feature:
+                    properties = feature['attributes']
+                    if properties.get('nom_com') == city_name:
+                        entry = {key: properties.get(key, None) for key in selected_attributes}
+                        if entry.get('valeur') is not None:
+                            entry['date_debut'] = pd.to_datetime(entry['date_debut'], unit='ms')
+                            city_data.append(entry)
+            
+            if not city_data:
+                print(f"Aucune donnée trouvée pour {city_name}")
+                return None
             
             df = pd.DataFrame(city_data, columns=selected_attributes)
             return df
@@ -25,6 +39,9 @@ def tracegraph(url, selected_attributes, city_name):
     
     # Appel de la fonction pour récupérer les données
     city_data_frame = get_pollution_data(url, selected_attributes, city_name)
+
+    if city_data_frame is None:
+        return  # Sortir si aucune donnée n'est récupérée
 
     # Convertir la colonne 'valeur' en un type numérique
     city_data_frame['valeur'] = pd.to_numeric(city_data_frame['valeur'], errors='coerce')
@@ -49,7 +66,5 @@ def tracegraph(url, selected_attributes, city_name):
 
     # Afficher la figure interactive
     fig.show()
-
-
 
 # %%
