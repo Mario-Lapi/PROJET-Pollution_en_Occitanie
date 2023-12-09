@@ -3,7 +3,7 @@ u# Pollution en Occitanie
 "Pollution en Occitanie" est un projet de visualisation de données de pollution atmosphérique dans les zones urbaines de la région Occitanie sur les cinq dernières années. Les polluants observés sont :
 
 - Les oxydes d'azote (NOx), regroupant le monoxyde et le dioxyde d'azote (NO et NO2)
-- L'ozone (03)
+- L'ozone (O3)
 - Les particules fines (PM10 et PM2.5)
 
  Les données de pollution sont fournies par : 
@@ -42,7 +42,7 @@ Le site contient différents objets de visualisations permettant les observation
 Voici les packages Python utilisés pour ce projet :
 
 - Pandas : manipulations de Dataframe
-- Matplotlib, Plotly, Seaborn : création de graphiques intéractifs
+- Matplotlib, Plotly, Seaborn, tqdm : création de graphiques intéractifs
 - Folium : création de carte
 - Requests : importation de données en ligne
 
