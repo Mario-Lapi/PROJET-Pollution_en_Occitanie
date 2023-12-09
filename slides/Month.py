@@ -1,7 +1,5 @@
 #%%
 import pandas as pd
-import matplotlib.dates as mdates
-import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 

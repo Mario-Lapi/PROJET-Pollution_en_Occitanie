@@ -1,163 +1,240 @@
 [
   {
-    "objectID": "Par_villes/Montauban.html",
-    "href": "Par_villes/Montauban.html",
-    "title": "Pollution à Montauban",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montauban - Ramierou Urbain'\n\nTrace_go(data,station,'Montauban')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Montauban.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Montauban.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Montauban",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montauban - Ramierou Urbain'\n\nTrace_go(data,station,'Montauban')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Perpignan.html",
-    "href": "Par_villes/Perpignan.html",
-    "title": "Pollution à Perpignan",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Perpignan Centre - Urbain'\n\nTrace_go(data,station,'Perpignan')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Perpignan.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Perpignan.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Perpignan",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Perpignan Centre - Urbain'\n\nTrace_go(data,station,'Perpignan')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Montpellier.html",
-    "href": "Par_villes/Montpellier.html",
-    "title": "Pollution à Montpellier",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import * \n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montpellier - Prés d Arènes Urbain'\n\nTrace_go(data,station,'Montpellier')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Montpellier.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Montpellier.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Montpellier",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import * \n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montpellier - Prés d Arènes Urbain'\n\nTrace_go(data,station,'Montpellier')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Toulouse.html",
-    "href": "Par_villes/Toulouse.html",
-    "title": "Pollution à Toulouse",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Toulouse-Jacquier Urbain'\n\nTrace_go(data,station,'Toulouse')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Toulouse.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Toulouse.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Toulouse",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Toulouse-Jacquier Urbain'\n\nTrace_go(data,station,'Toulouse')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Rodez.html",
-    "href": "Par_villes/Rodez.html",
-    "title": "Pollution à Rodez",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Rodez - Camonil Urbain'\n\nTrace_go(data,station,'Rodez')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Rodez.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Rodez.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Rodez",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Rodez - Camonil Urbain'\n\nTrace_go(data,station,'Rodez')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Pollution en Occitanie",
     "section": "",
-    "text": "Khadidiatou Kenewy DIALLO : khadidiatou-kenewy.diallo@etu.umontpellier.fr,\nMario LAPI : mario.lapi@etu.umontpellier.fr,\nJeanne MANNEQUIN : jeanne.mannequin@etu.umontpellier.fr,\nCamille MOTTIER : camille.mottier@etu.umontpellier.fr."
+    "text": "“Pollution en Occitanie” permet la visualisation de données récentes de pollutions atmosphériques en Occitanie. Les polluants étudiés sont :\n\nLes oxydes d’azote (NOx), regroupant le monoxyde et le dioxyde d’azote (NO et NO2)\nL’ozone (03)\nLes particules fines (PM10 et PM2.5)\n\nCes visualisations permettent une comparaison géographique des chefs-lieux des départements d’Occitanie en terme de pollution, mais aussi l’observation des évolutions temporelles de la concentration au sein d’une ville (évolutions horaire, journalière et mensuelle). Les concentrations obtenues peuvent être mises en relation avec les seuils de référence fixés par l’OMS :"
+  },
+  {
+    "objectID": "index.html#résumé",
+    "href": "index.html#résumé",
+    "title": "Pollution en Occitanie",
+    "section": "",
+    "text": "“Pollution en Occitanie” permet la visualisation de données récentes de pollutions atmosphériques en Occitanie. Les polluants étudiés sont :\n\nLes oxydes d’azote (NOx), regroupant le monoxyde et le dioxyde d’azote (NO et NO2)\nL’ozone (03)\nLes particules fines (PM10 et PM2.5)\n\nCes visualisations permettent une comparaison géographique des chefs-lieux des départements d’Occitanie en terme de pollution, mais aussi l’observation des évolutions temporelles de la concentration au sein d’une ville (évolutions horaire, journalière et mensuelle). Les concentrations obtenues peuvent être mises en relation avec les seuils de référence fixés par l’OMS :"
   },
   {
     "objectID": "index.html#auteurs",
     "href": "index.html#auteurs",
     "title": "Pollution en Occitanie",
-    "section": "",
-    "text": "Khadidiatou Kenewy DIALLO : khadidiatou-kenewy.diallo@etu.umontpellier.fr,\nMario LAPI : mario.lapi@etu.umontpellier.fr,\nJeanne MANNEQUIN : jeanne.mannequin@etu.umontpellier.fr,\nCamille MOTTIER : camille.mottier@etu.umontpellier.fr."
+    "section": "Auteurs",
+    "text": "Auteurs\n\nKhadidiatou Kenewy DIALLO : khadidiatou-kenewy.diallo@etu.umontpellier.fr,\nMario LAPI : mario.lapi@etu.umontpellier.fr,\nJeanne MANNEQUIN : jeanne.mannequin@etu.umontpellier.fr,\nCamille MOTTIER : camille.mottier@etu.umontpellier.fr."
   },
   {
-    "objectID": "Par_villes/Saint_Girons.html",
-    "href": "Par_villes/Saint_Girons.html",
-    "title": "Pollution à Saint-Girons",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'St-Girons Urbain'\n\nTrace_go(data,station,'Saint-Girons')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Saint_Girons.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Saint_Girons.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Saint-Girons",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'St-Girons Urbain'\n\nTrace_go(data,station,'Saint-Girons')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Nimes.html",
-    "href": "Par_villes/Nimes.html",
-    "title": "Pollution à Nîmes",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Nîmes Sud - Urbain'\n\nTrace_go(data,station,'Nîmes')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Nimes.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Nimes.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Nîmes",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Nîmes Sud - Urbain'\n\nTrace_go(data,station,'Nîmes')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Auch.html",
-    "href": "Par_villes/Auch.html",
-    "title": "Pollution à Auch",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'AUCH ST EXUPERY'\n\nTrace_go(data,station,'Auch')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Auch.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Auch.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Auch",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'AUCH ST EXUPERY'\n\nTrace_go(data,station,'Auch')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Tarbes.html",
-    "href": "Par_villes/Tarbes.html",
-    "title": "Pollution à Tarbes",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Tarbes-Dupuy Urbain'\n\nTrace_go(data,station,'Tarbes')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Tarbes.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Tarbes.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Tarbes",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Tarbes-Dupuy Urbain'\n\nTrace_go(data,station,'Tarbes')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Albi.html",
-    "href": "Par_villes/Albi.html",
-    "title": "Pollution à Albi",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Albi Urbain'\n\nTrace_go(data,station,'Albi')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Par_villes/Albi.html#pollution-sur-un-mois-et-variations-horaires",
-    "href": "Par_villes/Albi.html#pollution-sur-un-mois-et-variations-horaires",
-    "title": "Pollution à Albi",
-    "section": "",
-    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Albi Urbain'\n\nTrace_go(data,station,'Albi')\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
-  },
-  {
-    "objectID": "Geographique.html",
-    "href": "Geographique.html",
+    "objectID": "PollutionEnOccitanie/Comparaison_geo/Geographique.html",
+    "href": "PollutionEnOccitanie/Comparaison_geo/Geographique.html",
     "title": "Comparaison des chefs-lieux",
     "section": "",
-    "text": "Code\nimport folium\nfrom IPython.display import IFrame\n\n# Créer une carte\nm = folium.Map(location=[43.6000,1.4400], zoom_start=8,tiles='CartoDB Positron', attr='CartoDB Positron')\n\ngeojson_url = 'https://france-geojson.gregoiredavid.fr/repo/regions/occitanie/region-occitanie.geojson'\nfolium.GeoJson(geojson_url, name='occitanie').add_to(m)\n\n# Ajouter des points de couleur à la carte\npoints_interet = [\n    {'location': [43.6047, 1.4442], 'popup': 'Toulouse'},\n    {'location': [43.6116, 3.8770], 'popup': 'Montpellier'}\n]\n\n# Fonction pour définir la taille du point selon le taux de pollution\ndef diam(point):\n    return 5000\n\n# Fonction pour définir la couleur du point selon le taux de pollution\ndef color(point):\n    return 'red'\n\nfor point in points_interet:\n    folium.Circle(\n        location=point['location'],\n        radius=diam(point),\n        color=color(point),\n        fill=True,\n        fill_color=color(point),\n        fill_opacity=0.5,\n        popup=point['popup']\n    ).add_to(m)\n\nm\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\n\n\n\n Back to top"
+    "text": "Code\nimport folium\nimport pandas as pd\nimport math\nimport csv\n\n# Créer une carte focus sur la région\nm = folium.Map(location=[43.6000,1.4400], zoom_start=8,tiles='CartoDB Positron', attr='CartoDB Positron')\n\n# Découper la carte en départements \ngeojson_url = 'https://france-geojson.gregoiredavid.fr/repo/regions/occitanie/departements-occitanie.geojson'\nfolium.GeoJson(geojson_url, name='occitanie').add_to(m)\n\n# Nom du fichier CSV\nnom_fichier_csv = 'Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv'\n\n# Ouvrir le fichier CSV en mode lecture\nwith open(nom_fichier_csv, newline='') as fichier_csv:\n    lecteur_csv = csv.reader(fichier_csv)\n    l=[]\n    data2=[]\n    # Lire les lignes du fichier CSV\n    for ligne in lecteur_csv:\n        if ligne[3] not in l:\n            l.append(ligne[3])\n        data2.append(ligne)\n# Regrouper les données de façon à les utiliser (une station par ville qui est la moyenne des autres stations sur la même ville)\ndata=[]\nliste=[]\np=0\nfor ville in l[1:]:\n    s=0\n    n=0\n    for ligne in data2:\n        if ligne[3] == ville:\n            s+=float(ligne[11])\n            n+=1\n            if ligne[3] not in liste:\n                data.append(ligne)\n            liste.append(ville)\n    s=s/n\n    data[p][11]=s\n    p+=1\n# Créer un data utilisable par folium\nlat=[]\nlon=[]\nname=[]\nvalue=[]     \nfor ligne in data:\n    lat.append(float(ligne[1]))\n    lon.append(float(ligne[0]))\n    name.append(ligne[3])\n    value.append(float(ligne[11]))\ndata3 = pd.DataFrame({\n   'lat':lat,\n   'lon':lon,\n   'name':name,\n   'value':value\n})\n\nfor city in data3.itertuples():\n    local_deformation = math.cos(city.lat * math.pi / 180)\n    folium.Circle(\n        location=[city.lat, city.lon],\n        popup=city.value,\n        tooltip=folium.Tooltip(city.name),\n        radius=city.value * 800.0 * local_deformation,\n        color='purple',\n        fill=True,\n        fill_color='purple'\n    ).add_to(m)\n\n# Montrer la carte\nm\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Montauban.html",
+    "href": "PollutionEnOccitanie/Par_villes/Montauban.html",
+    "title": "Pollution à Montauban",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montauban - Ramierou Urbain'\n\nTrace_go(data,station,'Montauban')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Montauban.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Montauban.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Montauban",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montauban - Ramierou Urbain'\n\nTrace_go(data,station,'Montauban')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Montauban.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Montauban.html#pollution-sur-lannée",
+    "title": "Pollution à Montauban",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('MONTAUBAN'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'MONTAUBAN'\n\ntracegraph(url, selected_attributes, cityname)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Perpignan.html",
+    "href": "PollutionEnOccitanie/Par_villes/Perpignan.html",
+    "title": "Pollution à Perpignan",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Perpignan Centre - Urbain'\n\nTrace_go(data,station,'Perpignan')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Perpignan.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Perpignan.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Perpignan",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Perpignan Centre - Urbain'\n\nTrace_go(data,station,'Perpignan')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Perpignan.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Perpignan.html#pollution-sur-lannée",
+    "title": "Pollution à Perpignan",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('PERPIGNAN'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'PERPIGNAN'\n\ntracegraph(url, selected_attributes, cityname)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Montpellier.html",
+    "href": "PollutionEnOccitanie/Par_villes/Montpellier.html",
+    "title": "Pollution à Montpellier",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import * \nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montpellier - Prés d Arènes Urbain'\n\nTrace_go(data,station,'Montpellier')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Montpellier.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Montpellier.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Montpellier",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import * \nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Montpellier - Prés d Arènes Urbain'\n\nTrace_go(data,station,'Montpellier')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Montpellier.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Montpellier.html#pollution-sur-lannée",
+    "title": "Pollution à Montpellier",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('MONTPELLIER'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'MONTPELLIER'\n\ntracegraph(url, selected_attributes,cityname)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Toulouse.html",
+    "href": "PollutionEnOccitanie/Par_villes/Toulouse.html",
+    "title": "Pollution à Toulouse",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Toulouse-Jacquier Urbain'\n\nTrace_go(data,station,'Toulouse')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Toulouse.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Toulouse.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Toulouse",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Toulouse-Jacquier Urbain'\n\nTrace_go(data,station,'Toulouse')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Toulouse.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Toulouse.html#pollution-sur-lannée",
+    "title": "Pollution à Toulouse",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('TOULOUSE'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'TOULOUSE'\n\ntracegraph(url, selected_attributes, cityname)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Rodez.html",
+    "href": "PollutionEnOccitanie/Par_villes/Rodez.html",
+    "title": "Pollution à Rodez",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Rodez - Camonil Urbain'\n\nTrace_go(data,station,'Rodez')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Rodez.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Rodez.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Rodez",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Rodez - Camonil Urbain'\n\nTrace_go(data,station,'Rodez')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Rodez.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Rodez.html#pollution-sur-lannée",
+    "title": "Pollution à Rodez",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('RODEZ'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'RODEZ'\n\ntracegraph(url, selected_attributes, cityname)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Saint_Girons.html",
+    "href": "PollutionEnOccitanie/Par_villes/Saint_Girons.html",
+    "title": "Pollution à Saint-Girons",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'St-Girons Urbain'\n\nTrace_go(data,station,'Saint-Girons')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Saint_Girons.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Saint_Girons.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Saint-Girons",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'St-Girons Urbain'\n\nTrace_go(data,station,'Saint-Girons')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Saint_Girons.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Saint_Girons.html#pollution-sur-lannée",
+    "title": "Pollution à Saint-Girons",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('SAINT-GIRONS'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'SAINT-GIRONS'\n\ntracegraph(url, selected_attributes, cityname)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Nimes.html",
+    "href": "PollutionEnOccitanie/Par_villes/Nimes.html",
+    "title": "Pollution à Nîmes",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Nîmes Sud - Urbain'\n\nTrace_go(data,station,'Nîmes')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Nimes.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Nimes.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Nîmes",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Nîmes Sud - Urbain'\n\nTrace_go(data,station,'Nîmes')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Nimes.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Nimes.html#pollution-sur-lannée",
+    "title": "Pollution à Nîmes",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('NIMES'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'NIMES'\n\ntracegraph(url, selected_attributes, cityname)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Auch.html",
+    "href": "PollutionEnOccitanie/Par_villes/Auch.html",
+    "title": "Pollution à Auch",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'AUCH ST EXUPERY'\n\nTrace_go(data,station,'Auch')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Auch.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Auch.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Auch",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'AUCH ST EXUPERY'\n\nTrace_go(data,station,'Auch')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Auch.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Auch.html#pollution-sur-lannée",
+    "title": "Pollution à Auch",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('AUCH'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'AUCH'\n\ntracegraph(url, selected_attributes, cityname)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Tarbes.html",
+    "href": "PollutionEnOccitanie/Par_villes/Tarbes.html",
+    "title": "Pollution à Tarbes",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Tarbes-Dupuy Urbain'\n\nTrace_go(data,station,'Tarbes')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Tarbes.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Tarbes.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Tarbes",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Tarbes-Dupuy Urbain'\n\nTrace_go(data,station,'Tarbes')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Tarbes.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Tarbes.html#pollution-sur-lannée",
+    "title": "Pollution à Tarbes",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('TARBES'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'TARBES'\n\ntracegraph(url, selected_attributes, cityname)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Albi.html",
+    "href": "PollutionEnOccitanie/Par_villes/Albi.html",
+    "title": "Pollution à Albi",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Albi Urbain'\n\nTrace_go(data,station,'Albi')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Albi.html#pollution-sur-un-mois-et-variations-horaires",
+    "href": "PollutionEnOccitanie/Par_villes/Albi.html#pollution-sur-un-mois-et-variations-horaires",
+    "title": "Pollution à Albi",
+    "section": "",
+    "text": "Code\n# import pandas as pd\n# import matplotlib.dates as mdates\n# import matplotlib.pyplot as plt\n# import plotly.express as px\n# import plotly.graph_objects as go\nfrom Month import *\nfrom Horloge import *\nfrom Month_resume import *\n\ndata = pd.read_csv(\"Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\")\n\nstation = 'Albi Urbain'\n\nTrace_go(data,station,'Albi')\n\ntrace_resume(data, station)\n\nHorloge_semaine(data, station)\n\nHorloge_weekend(data,station)"
+  },
+  {
+    "objectID": "PollutionEnOccitanie/Par_villes/Albi.html#pollution-sur-lannée",
+    "href": "PollutionEnOccitanie/Par_villes/Albi.html#pollution-sur-lannée",
+    "title": "Pollution à Albi",
+    "section": "Pollution sur l’année",
+    "text": "Pollution sur l’année\n\n\nCode\nfrom Tracegraph import *\n\nurl = \"https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('ALBI'))&outFields=*\"\nselected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']\ncityname = 'ALBI'\n\ntracegraph(url, selected_attributes, cityname)"
   }
 ]

@@ -1,0 +1,39 @@
+---
+title : "Pollution à Auch"
+---
+
+## Pollution sur un mois et variations horaires
+
+```{python}
+# import pandas as pd
+# import matplotlib.dates as mdates
+# import matplotlib.pyplot as plt
+# import plotly.express as px
+# import plotly.graph_objects as go
+from Month import *
+from Horloge import *
+from Month_resume import *
+
+data = pd.read_csv("Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv")
+
+station = 'AUCH ST EXUPERY'
+
+Trace_go(data,station,'Auch')
+
+trace_resume(data, station)
+
+Horloge_semaine(data, station)
+
+Horloge_weekend(data,station)
+
+```
+## Pollution sur l'année
+```{python}
+from Tracegraph import *
+
+url = "https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?f=json&where=(nom_com%20IN%20('AUCH'))&outFields=*"
+selected_attributes = ['nom_com', 'nom_poll', 'valeur', 'date_debut']
+cityname = 'AUCH'
+
+tracegraph(url, selected_attributes, cityname)
+```
