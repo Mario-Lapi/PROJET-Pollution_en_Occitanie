@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the provided CSV file into a dataframe
-df = pd.read_csv('donnees-synop-essentielles-omm (3).csv')
+df = pd.read_csv('../donnees-synop-essentielles-omm (3).csv')
 
 # Display the head of the dataframe to get an initial sense of the data
 print(df.head())

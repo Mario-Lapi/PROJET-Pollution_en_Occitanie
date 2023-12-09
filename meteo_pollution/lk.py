@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-file_path = './Mesure_annuelle_Region_Occitanie_Polluants_Principaux (1).csv'
+file_path = '../Mesure_annuelle_Region_Occitanie_Polluants_Principaux (1).csv'
 df = pd.read_csv(file_path, encoding='UTF-8-SIG')
 print(df.head())
 import matplotlib.pyplot as plt

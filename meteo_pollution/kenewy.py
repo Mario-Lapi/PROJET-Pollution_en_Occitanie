@@ -4,7 +4,7 @@ import pandas as pd
 
 
 # Load the CSV file into a DataFrame
-file_path = './Mesure_annuelle_Region_Occitanie_Polluants_Principaux (1).csv'
+file_path = '../Mesure_annuelle_Region_Occitanie_Polluants_Principaux (1).csv'
 df = pd.read_csv(file_path, encoding='UTF-8-SIG')
 
 # Filter the DataFrame for PM10 pollutant

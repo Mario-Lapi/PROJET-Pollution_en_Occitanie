@@ -4,7 +4,7 @@ from tqdm.auto import tqdm
 tqdm.pandas()
 
 # Load the CSV file with the correct delimiter and skip bad lines
-file_path = 'donnees-synop-essentielles-omm (3).csv'
+file_path = '../donnees-synop-essentielles-omm (3).csv'
 df = pd.read_csv(file_path, delimiter=';')
 
 # Display the head of the dataframe to get an initial sense of the data

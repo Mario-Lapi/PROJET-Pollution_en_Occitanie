@@ -8,7 +8,7 @@ from tqdm.auto import tqdm
 import matplotlib.pyplot as plt
 
 # Load the CSV file into a DataFrame
-file_path = 'donnees-synop-essentielles-omm (3).csv'
+file_path = '../donnees-synop-essentielles-omm (3).csv'
 df = pd.read_csv(file_path, sep=';', parse_dates=['Date'], dayfirst=True)
 
 # Convert 'Date' to datetime and sort the DataFrame by 'Date'

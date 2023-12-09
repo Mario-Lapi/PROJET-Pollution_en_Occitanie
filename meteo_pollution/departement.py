@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Spécifiez le chemin vers votre fichier CSV
-file_path = 'Mesure_annuelle_Region_Occitanie_Polluants_Principaux (1).csv'
+file_path = '../Mesure_annuelle_Region_Occitanie_Polluants_Principaux (1).csv'
 
 # Lisez le fichier CSV en utilisant Pandas
 df = pd.read_csv(file_path, sep=';', parse_dates=['Date'], dayfirst=True)
