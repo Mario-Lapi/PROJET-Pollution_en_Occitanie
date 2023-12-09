@@ -1,4 +1,4 @@
-# Pollution en Occitanie
+u# Pollution en Occitanie
 
 "Pollution en Occitanie" est un projet de visualisation de données de pollution atmosphérique dans les zones urbaines de la région Occitanie sur les cinq dernières années. Les polluants observés sont :
 
@@ -38,11 +38,13 @@ Le site contient différents objets de visualisations permettant les observation
 
 ## Packages Python utilisés
 
+
 Voici les packages Python utilisés pour ce projet :
 
 - Pandas : manipulations de Dataframe
 - Matplotlib, Plotly, Seaborn : création de graphiques intéractifs
 - Folium : création de carte
 - Requests : importation de données en ligne
+
 
 
