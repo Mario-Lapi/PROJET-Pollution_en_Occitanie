@@ -531,4 +531,15 @@ Horloge_weekend(data,station)
 
 ## Pour conclure, des axes de réflexion
 
+- **Nos difficultés communes**
+  
+  - un truc 
+  - un autre truc
+
+- **Améliorations**
+  
+  - encore un truc
+  - encore un autre truc 
+  - ajouter une class
+
 
