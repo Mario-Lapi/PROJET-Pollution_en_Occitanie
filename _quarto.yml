@@ -17,7 +17,7 @@ website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
   title: "Pollution en Occitanie"
-  # site-url: 
+  site-url: https://cmottier.github.io/PROJET-Pollution_en_Occitanie
   repo-url: https://github.com/cmottier/PROJET-Pollution_en_Occitanie
 
   navbar:
