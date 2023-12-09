@@ -188,11 +188,7 @@ for city in data3.itertuples():
 m
 ```
 
-## Comparaison saisonnière
 
-La réflexion
-Le code...
-Le rendu sur un exemple (dans une autre diapo)
 
 ## Évolution sur 30 jours
 
@@ -200,8 +196,6 @@ Module Month
 
 ```{.python}
 import pandas as pd
-import matplotlib.dates as mdates
-import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 
@@ -426,8 +420,6 @@ Module Horloge
 ```{.python}
 import pandas as pd
 import calendar
-import matplotlib.dates as mdates
-import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from Month import *
@@ -529,17 +521,28 @@ Horloge_weekend(data,station)
 
 ::::
 
-## Pour conclure, des axes de réflexion
+## Comparaison saisonnière
 
-- **Nos difficultés communes**
-  
-  - un truc 
-  - un autre truc
+(Mario)
+
+## Pour conclure...
+
+
+- **Intérêt du projet**
+
+    Les découvertes...
+
+
+- **Des difficultés**
+
+  - Import des données
+  - Manipulation de github
 
 - **Améliorations**
-  
-  - encore un truc
-  - encore un autre truc 
-  - ajouter une class
+
+  - Import automatisé
+  - Étude des temps de calculs
+  - Création de classe
+  - Documentation
 
 

@@ -2,17 +2,17 @@ project:
   type: website
   render:
     - index.qmd
-    - Par_villes/Saint_Girons.qmd
-    - Par_villes/Rodez.qmd
-    - Par_villes/Nimes.qmd
-    - Par_villes/Toulouse.qmd
-    - Par_villes/Auch.qmd
-    - Par_villes/Montpellier.qmd
-    - Par_villes/Tarbes.qmd
-    - Par_villes/Perpignan.qmd
-    - Par_villes/Albi.qmd
-    - Par_villes/Montauban.qmd
-    - Geographique.qmd
+    - PollutionEnOccitanie/Par_villes/Saint_Girons.qmd
+    - PollutionEnOccitanie/Par_villes/Rodez.qmd
+    - PollutionEnOccitanie/Par_villes/Nimes.qmd
+    - PollutionEnOccitanie/Par_villes/Toulouse.qmd
+    - PollutionEnOccitanie/Par_villes/Auch.qmd
+    - PollutionEnOccitanie/Par_villes/Montpellier.qmd
+    - PollutionEnOccitanie/Par_villes/Tarbes.qmd
+    - PollutionEnOccitanie/Par_villes/Perpignan.qmd
+    - PollutionEnOccitanie/Par_villes/Albi.qmd
+    - PollutionEnOccitanie/Par_villes/Montauban.qmd
+    - PollutionEnOccitanie/Comparaison_geo/Geographique.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -23,46 +23,22 @@ website:
   navbar:
     title: "Pollution en Occitanie"
     background: primary
-    # search: true
-    # tools:
-    #   - icon: bicycle
-    #     href: https://moodle.umontpellier.fr/course/view.php?id=22454
-    #     text: Moodle
-    #   - icon: github
-    #     href: https://github.com/josephsalmon/HAX712X
-    #     text: GitHub
     left:
       - text: Comparaison géographique
         menu: 
-          - Geographique.qmd
+          - PollutionEnOccitanie/Comparaison_geo/Geographique.qmd
       - text: Graphiques par villes
         menu: 
-          - Par_villes/Saint_Girons.qmd
-          - Par_villes/Rodez.qmd
-          - Par_villes/Nimes.qmd
-          - Par_villes/Toulouse.qmd
-          - Par_villes/Auch.qmd
-          - Par_villes/Montpellier.qmd
-          - Par_villes/Tarbes.qmd
-          - Par_villes/Perpignan.qmd
-          - Par_villes/Albi.qmd
-          - Par_villes/Montauban.qmd
-      # - sidebar:Villes
-  # sidebar:
-  #   - id: Villes
-  #     title: "Graphiques par villes"
-  #     collapse-level: 2
-  #     contents:
-  #       - Par_villes/Saint_Girons.qmd
-  #       - Par_villes/Rodez.qmd
-  #       - Par_villes/Nimes.qmd
-  #       - Par_villes/Toulouse.qmd
-  #       - Par_villes/Auch.qmd
-  #       - Par_villes/Montpellier.qmd
-  #       - Par_villes/Tarbes.qmd
-  #       - Par_villes/Perpignan.qmd
-  #       - Par_villes/Albi.qmd
-  #       - Par_villes/Montauban.qmd
+          - PollutionEnOccitanie/Par_villes/Saint_Girons.qmd
+          - PollutionEnOccitanie/Par_villes/Rodez.qmd
+          - PollutionEnOccitanie/Par_villes/Nimes.qmd
+          - PollutionEnOccitanie/Par_villes/Toulouse.qmd
+          - PollutionEnOccitanie/Par_villes/Auch.qmd
+          - PollutionEnOccitanie/Par_villes/Montpellier.qmd
+          - PollutionEnOccitanie/Par_villes/Tarbes.qmd
+          - PollutionEnOccitanie/Par_villes/Perpignan.qmd
+          - PollutionEnOccitanie/Par_villes/Albi.qmd
+          - PollutionEnOccitanie/Par_villes/Montauban.qmd
 
 
 format:
@@ -70,8 +46,6 @@ format:
     toc: true
     theme:
       spacelab
-      # light: spacelab
-    # mainfont: Atkinson Hyperlegible
     html-math-method: katex
     number-sections: false
     toc-depth: 3
@@ -87,6 +61,3 @@ format:
     citation-location: margin
     grid: 
       body-width: 1500px
-    # self-contained: true
-    # fig-format: svg
-    # css: custom.scss
