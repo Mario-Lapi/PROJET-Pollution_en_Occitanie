@@ -1,1 +1,1 @@
-Sitemap: https://github.com/cmottier/PROJET-Pollution_en_Occitanie/sitemap.xml
+Sitemap: https://cmottier.github.io/PROJET-Pollution_en_Occitanie/sitemap.xml
