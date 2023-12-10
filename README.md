@@ -36,10 +36,11 @@ Le site contient différents objets de visualisation permettant les observations
 
 Voici les modules Python utilisés pour ce projet :
 
-- Pandas : manipulations de Dataframe
+- Pandas, csv : manipulations de Dataframe
 - Matplotlib, Plotly, Seaborn, tqdm : création de graphiques intéractifs
 - Folium : création de carte
 - Requests : importation de données en ligne
+- Math : fonctions de maths de base
 
 ## Modules Python créés
 
