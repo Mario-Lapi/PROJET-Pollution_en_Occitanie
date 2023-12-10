@@ -59,13 +59,14 @@ data3 = pd.DataFrame({
    'value':value
 })
 
+#Création de cercles proportionnels à la mesure de pm10 présent par ville
 for city in data3.itertuples():
     local_deformation = math.cos(city.lat * math.pi / 180)
     folium.Circle(
         location=[city.lat, city.lon],
-        popup=city.value,
+        popup=folium.Popup(city.value,"µm/m³"),
         tooltip=folium.Tooltip(city.name),
-        radius=city.value * 800.0 * local_deformation,
+        radius=city.value * 800.0 * local_deformation, #le facteur 800 est choisit arbitrairement
         color='purple',
         fill=True,
         fill_color='purple'
