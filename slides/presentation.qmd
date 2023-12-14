@@ -43,23 +43,18 @@ Le code :
 
 ```{.python code-line-numbers="1-4,6-14,16,26,60-71"}
 import folium
-%highlight
 import pandas as pd
-%highlight
 import math
-%highlight
 import csv
 
 # Créer une carte focus sur la région
 m = folium.Map(location=[43.6000,1.4400], zoom_start=8,tiles='CartoDB Positron', attr='CartoDB Positron')
 
 # Découper la carte en départements %highlight
-%highlight
 geojson_url = 'https://france-geojson.gregoiredavid.fr/repo/regions/occitanie/departements-occitanie.geojson'
 folium.GeoJson(geojson_url, name='occitanie').add_to(m)
 
 # Nom du fichier CSV
-%highlight
 nom_fichier_csv = 'Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv'
 
 # Ouvrir le fichier CSV en mode lecture
@@ -72,7 +67,6 @@ with open(nom_fichier_csv, newline='') as fichier_csv:
         if ligne[3] not in l:
             l.append(ligne[3])
         data2.append(ligne)
-%highlight
 # Regrouper les données de façon à les utiliser (une station par ville qui est la moyenne des autres stations sur la même ville)
 data=[]
 liste=[]
@@ -114,7 +108,6 @@ for city in data3.itertuples():
         location=[city.lat, city.lon],
         popup=folium.Popup(f"{city.value} µm/m³"),
         tooltip=folium.Tooltip(city.name),
-%highlight
         radius=city.value * 800.0 * local_deformation, #le facteur 800 est choisit arbitrairement
         color='purple',
         fill=True,
